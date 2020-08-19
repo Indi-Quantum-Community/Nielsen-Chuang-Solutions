@@ -1,0 +1,196 @@
+
+\paragraph{2.1}
+
+A set of vectors are linearly dependent if \(\sum_{i} a_i \ket{v}_i = 0\),
+where \(a_i\) are complex numbers not all zero, and \(\ket{v}_i\) are the
+vectors. Otherwise they are linearly independent. For the given set of vectors
+we can see that \((1, -1) + (1, 2) - (2, 1) = 0\). Thus they are linearly
+dependent.
+
+\paragraph{2.2}
+
+Here we have a linear operator \(A\) such that \(A\ket{0} = \ket{1}\), and
+\(A\ket{1} = \ket{0}\). From equation 2.12 of Nielsen \& Chuang we see that the
+matrix representation of a linear operator \(A: V \rightarrow W\) is given by
+\begin{align}
+  \label{eq:linear-operator-matrix-representation}
+  A\ket{v_j} = \sum_{i}A_{ij}\ket{w_i},
+\end{align}
+where \(\{\ket{v_j}\}\) is a basis for \(V\), \(\{\ket{w}_i\}\) is a basis for
+\(W\), and the \(A_{ij}\) are the elements of the matrix representing the operator
+\(A\). Here we have \(W = V\). Then we can write
+\begin{align}
+  \label{eq:A-matrix-representation}
+  \begin{split}
+    A\ket{0} = \ket{1} = 0\ket{0} + 1\ket{1}, \\
+    A\ket{1} = \ket{0} = 1\ket{0} + 0\ket{1}.
+  \end{split}
+\end{align}
+Thus we have \(A_{00} = 0, A_{01} = 1, A_{10} = 1, A_{11} = 0\), which means
+that the matrix representation of \(A\) with respect to the input basis
+\(\{\ket{0}, \ket{1}\}\), and output basis \(\{\ket{0}, \ket{1}\}\) is
+\begin{align}
+  \label{eq:A-matrix}
+  A \equiv
+  \begin{bmatrix}
+    0 & 1 \\
+    1 & 0
+  \end{bmatrix}.
+\end{align}
+
+We can have a different matrix representation of the operator \(A\), by choosing
+a different input and output bases. We will use the basis \(\{\ket{+},
+\ket{-}\}\) as both the input and output bases. Here
+\begin{align}
+  \label{eq:pm-basis}
+  \ket{\pm} = \frac{1}{\sqrt{2}}(\ket{0} \pm \ket{1}).
+\end{align}
+Then the action of \(A\) on this basis is given by
+\begin{align}
+  \label{eq:A-action-pm}
+  A\ket{\pm} = \frac{1}{\sqrt{2}}(A\ket{0} \pm A\ket{1})
+  = \frac{1}{\sqrt{2}}(\ket{1} \pm \ket{0})
+  = \pm \ket{\pm}.
+\end{align}
+Thus \(A\) converts \(\ket{+}\) to \(\ket{+}\), and \(\ket{-}\) to \(-\ket{-}\).
+Again using equation 2.12 from Nielsen \& Chuang, we can write this as
+\begin{align}
+  \label{eq:A-matrix-representation-pm}
+  \begin{split}
+    A\ket{+} = \ket{+} = 1\ket{+} + 0\ket{-}, \\
+    A\ket{-} = -\ket{-} = 0\ket{+} - 1\ket{-}.
+  \end{split}
+\end{align}
+Thus we have \(A_{++} = -A_{--} = 1\), and \(A_{+-} = A_{-+} = 0\). Thus the
+matrix representing \(A\) with respect to this choice of input and output bases
+is
+\begin{align}
+  \label{eq:A-matrix-pm}
+  A \equiv
+  \begin{bmatrix}
+    1 & 0 \\
+    0 & -1
+  \end{bmatrix}.
+\end{align}
+The operator \(A\) is nothing but the operator corresponding to the Pauli matrix
+\(X\).
+
+\paragraph{2.3}
+
+\(A\) is a linear operator from \(V\) to \(W\), and \(B\) is a linear operator
+from \(W\) to \(X\), where \(V, W, X\) are vector spaces. Then from equation
+2.12 of Nielsen \& Chuang we have:
+\begin{align}
+  \label{eq:A-B-matrix-representation}
+  A\ket{v_i} = \sum_{j} A_{ji}\ket{w_j}, \\
+  B\ket{w_j} = \sum_{k} B_{kj}\ket{x_k},
+\end{align}
+where \(\{\ket{v_i}\}\), \(\{\ket{w_j}\}\), and \(\{\ket{x_k}\}\) are the bases
+for \(V\), \(W\), \(X\), respectively, and \(A_{ji}\), and \(B_{kj}\) are the
+elements of the matrices representing \(A\), \(B\), respectively, in these
+bases. Then we can write the linear transformation \(BA: V \rightarrow X\) as
+\begin{align}
+  \label{eq:BA-matrix-representation}
+  BA\ket{v_j} &= B(A\ket{v_j}) \nonumber\\
+  &= B\biggl(\sum_{ji} A_{ji}\ket{w_j}\biggr) \nonumber\\
+              &= \sum_{j} A_{ji} (B\ket{w_j}) \nonumber\\
+              &= \sum_{j} A_{ji} \sum_{k} B_{kj}\ket{x_k} \nonumber\\
+              &= \sum_{kj} B_{kj}A_{ji} \ket{x_k} \nonumber\\
+  &= \sum_{k} (BA)_{ki} \ket{x_k},
+\end{align}
+where in the third line we used the linearity of \(B\), and in the last line we
+used the definition of matrix multiplication. The complex numbers \((BA)_{ki}\)
+are the elements of the matrix corresponding to the operator \(BA\). Thus the
+matrix representation of \(BA\) is the product of the matrix representations of
+\(B\), and \(A\).
+
+\paragraph{2.4}
+
+The identity operator is defined as \(I: V \rightarrow V\), such that \(I\ket{v}
+= \ket{v}\), where \(\ket{v}\) is a vector in the vector space \(V\). Let
+\(\{\ket{v_i}\}\) be a basis for \(V\). Then
+\begin{align}
+  \label{eq:I-matrix-representation}
+  I\ket{v_i} = \ket{v_i}
+  = 0 \sum_{j < i} \ket{v_j} + 1\ket{v_i} + 0 \sum_{k > i} \ket{v_k}.
+\end{align}
+This is possible because a basis is always linearly independent. Thus \(I_{ij} =
+1\) if \(i = j\) and \(I_{ij} = 0\) if \(i \ne j\). Thus the matrix
+corresponding to the identity operator is
+\begin{align}
+  \label{eq:I-matrix}
+  I \equiv
+  \begin{bmatrix}
+    1 & &  \\
+    & \ddots & \\
+    & & 1
+  \end{bmatrix},
+\end{align}
+where the missing elements are all \(0\).
+
+\paragraph{2.5}
+
+A function \((\cdot, \cdot): V \times V \rightarrow \mathbb{C}\) is an inner
+product if it satisfies the requirements that:
+\begin{enumerate}
+\item \((\cdot, \cdot)\) is linear in the second argument,
+\item \((\ket{v}, \ket{w}) = (\ket{w}, \ket{v})^*\),
+\item \((\ket{v}, \ket{v}) \ge 0\) with equality if and only if \(\ket{v} = 0\).
+\end{enumerate}
+This is the definition of inner product given in Nielsen and Chuang. The claim
+is the function \((\cdot, \cdot): \mathbb{C}^n \rightarrow \mathbb{C}\) defined
+by
+\begin{align}
+  \label{eq:complex-multiplication}
+  ((y_1, \ldots, y_n), (z_1, \ldots, z_n))
+  \equiv
+  \sum_{i} y_i^*z_i = [y_1^* \ldots y_n^*]
+  \begin{bmatrix}
+    z_1 \\ \vdots \\ z_n
+  \end{bmatrix},
+\end{align}
+is an inner product. To verify this claim we need to check if it satisfies all
+the conditions of being an inner product.
+
+\underline{Linearity in the second argument.} Let the second argument be
+\(\sum_i \lambda_i (z_{i1},\ldots,z_{in})\). Then from the definition we have
+\begin{align}
+  \label{eq:linearity-check}
+  ((y_1, \ldots, y_n), \sum_i \lambda_i (z_{i1},\ldots,z_{in}))
+  &= \sum_{j} y_j^* \biggl(\sum_i \lambda_i z_{ij}\biggr) \nonumber\\
+  &= \sum_{ij} \lambda_i y_j^*z_{ij} \nonumber\\
+  &= \sum_{i} \lambda_i \biggl(\sum_j y_j^*z_{ij}\biggr) \nonumber\\
+  &= \sum_{i} \lambda_i((y_1, \ldots, y_n), (z_{i1}, \ldots, z_{in})).
+\end{align}
+
+\underline{Conjugate symmetry.} We can check this by using the symmetry and
+linearity of complex number conjugation:
+\begin{align}
+  \label{eq:conjugate-symmetry-check}
+  ((y_1, \ldots, y_n), (z_1, \ldots, z_n))
+  &= \sum_{i}y_i^*z_i \nonumber\\
+  &= \sum_{i}(z_i^*y_i)^* \nonumber\\
+  &= \biggl(\sum_{i}z_i^*y_i\biggr)^* \nonumber\\
+  &= ((z_1, \ldots, z_n), (y_1, \ldots, y_n)).
+\end{align}
+
+\underline{Positive semi-definite.} This is happens because \(z^*z = |z|^2\):
+\begin{align}
+  \label{eq:positive-semi-definite-check}
+  ((y_1, \ldots, y_n), (y_1, \ldots, y_n)) = \sum_i y_i^*y_i = \sum_i |y_i|^2,
+\end{align}
+where \(|y_i|^2 \ge 0\) with equality if and only if \(y_i = 0\).
+
+
+
+
+
+
+
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "chapter2_master"
+%%% End:
