@@ -1,0 +1,473 @@
+
+\paragraph{2.8} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\paragraph{2.9} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The identity Pauli matrix is given by,
+
+\begin{align}
+  \label{eq:2.9.1}
+  \sigma_0 \equiv I \equiv
+  \begin{bmatrix}
+    1 & 0 \\
+    0 & 1
+  \end{bmatrix}
+\end{align}
+
+And must fulfill that $\hat{I}\ket{1} = \ket{1}$ and $\hat{I}\ket{0} = \ket{0}$
+
+Then we can express the operator $\hat{I}$ as follows;
+
+\begin{align}
+  \label{eq:2.9.2}
+  \Rightarrow\hat{I}=\ket{0}\bra{0}+\ket{1}\bra{1}
+\end{align}
+
+Now let's see for the remaining Pauli operators. In general, when we have an operator represented as matrix:
+
+\begin{align}
+  \label{eq:2.9.3}
+  A =
+  \begin{pNiceMatrix}[first-row, last-col=3]
+    \bra{0} & \bra{1}          \\
+    \alpha  & \beta  & \ket{0} \\
+    \gamma  & \delta & \ket{1}
+  \end{pNiceMatrix}
+\end{align}
+
+\begin{align}
+  \label{eq:2.9.4}
+  \Rightarrow \; A = \alpha\ket{0}\bra{0}+\beta\ket{0}\bra{1}+\gamma\ket{1}\bra{0}+\delta\ket{1}\bra{1}
+\end{align}
+
+Therefore,
+
+\begin{align}
+  \label{eq:2.9.5}
+  \sigma_1 \equiv \sigma_x \equiv X \equiv
+  \begin{bmatrix}
+    0 & 1 \\
+    1 & 0
+  \end{bmatrix}
+  \; \; \Rightarrow \; \hat{X}=\ket{0}\bra{1}+\ket{1}\bra{0}
+\end{align}
+
+\begin{align}
+  \label{eq:2.9.6}
+  \sigma_2 \equiv \sigma_y \equiv Y \equiv
+  \begin{bmatrix}
+    0 & -i \\
+    i & 0
+  \end{bmatrix}
+  \; \; \Rightarrow \; \hat{Y}=i\ket{1}\bra{0}-i\ket{0}\bra{1}
+\end{align}
+
+\begin{align}
+  \label{eq:2.9.7}
+  \sigma_3 \equiv \sigma_z \equiv Z \equiv
+  \begin{bmatrix}
+    1 & 0 \\
+    0 & -1
+  \end{bmatrix}
+  \; \; \Rightarrow \; \hat{Z}=\ket{0}\bra{0}-\ket{1}\bra{1}
+\end{align}
+
+
+
+\paragraph{2.10} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+We are looking for the matrix representation of the operator $\ket{v_j}\bra{v_k}$, then,
+
+\begin{align}
+  \label{eq:2.10.1}
+  \ket{v_j}\bra{v_k}&=I_v\ket{v_j}\bra{v_k}I_v \\
+  &=\left(\sum_p\ket{v_p}\bra{v_p}\right)\ket{v_j}\bra{v_k}\left(\sum_q\ket{v_q}\bra{v_q}\right)\\
+  &=\sum_{p,q}\ket{v_p}\braket{v_p|v_j}\braket{v_k|v_q}\bra{v_q}\\
+  &=\sum_{p,q}\ket{v_p}\delta_{p,j}\delta_{k,q}\bra{v_q}\\
+  &=\sum_{p,q}\underbrace{\delta_{p,j}\delta_{k,q}}_{A_{pq}}\ket{v_p}\bra{v_q}\\
+\end{align}
+
+Where the array element $A_{pq}$, with column $q$ and row $p$,
+
+\begin{align}
+  \label{eq:2.10.2}
+  A_{pq} = \left(\ket{v_j}\bra{v_k}\right)_{pq}=\delta_{p,j}\delta_{k,q}
+\end{align}
+
+
+\paragraph{2.11} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Pauli matrix $\sigma_1=\sigma_x$
+
+\begin{align}
+  \label{eq:2.11.1}
+  X=
+  \begin{bmatrix}
+    0 & 1 \\
+    1 & 0
+  \end{bmatrix}
+\end{align}
+
+\begin{align}
+  \label{eq:2.11.2}
+  \Rightarrow 0 = c(\lambda_x)&=|X-\lambda_x I|
+  =
+  \begin{vmatrix}
+    -\lambda_x & 1 \\
+    1 & -\lambda_x
+  \end{vmatrix}
+  =\lambda_x^2-1
+\end{align}
+
+\begin{align}
+  \label{eq:2.11.3}
+  \therefore \lambda_x=\pm 1
+\end{align}
+
+If $\lambda_{x,1}=1$, its eigenvector $\ket{v_{x,1}}$ is:
+
+\begin{align}
+  \label{eq:2.11.4}
+  \Rightarrow X-\lambda_{x,1} I
+  =
+  \begin{bmatrix}
+    -1 & 1 \\
+    1 & -1
+  \end{bmatrix} 
+\end{align}
+
+\begin{align}
+  \label{eq:2.11.5}
+  \Rightarrow
+  \begin{bmatrix}
+    -1 & 1 \\
+    1 & -1
+  \end{bmatrix}
+  \begin{bmatrix}
+    a_{x,1} \\
+    a_{x,2}
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    0 \\
+    0
+  \end{bmatrix}
+\end{align}
+
+\begin{align}
+  \label{eq:2.11.6}
+  \Rightarrow \ket{v_{x,1}} = \frac{1}{\sqrt{2}}
+  \begin{bmatrix}
+    1 \\
+    1
+  \end{bmatrix} 
+\end{align}
+
+If $\lambda_{x,2}=-1$, its eigenvector $\ket{v_{x,2}}$ is:
+
+\begin{align}
+  \label{eq:2.11.7}
+  \Rightarrow X-\lambda_{x,2} I
+  =
+  \begin{bmatrix}
+    1 & 1 \\
+    1 & 1
+  \end{bmatrix} 
+\end{align}
+
+\begin{align}
+  \label{eq:2.11.8}
+  \Rightarrow
+  \begin{bmatrix}
+    1 & 1 \\
+    1 & 1
+  \end{bmatrix}
+  \begin{bmatrix}
+    b_{x,1} \\
+    b_{x,2}
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    0 \\
+    0
+  \end{bmatrix}
+\end{align}
+
+\begin{align}
+  \label{eq:2.11.9}
+  \Rightarrow \ket{v_{x,2}} = \frac{1}{\sqrt{2}}
+  \begin{bmatrix}
+    -1 \\
+    1
+  \end{bmatrix} 
+\end{align}
+
+Note that the matrix representation of this in the basis of the eigenvectors for a particular operator, is just a diagonal matrix with entries equal to the eigenvalues:
+
+\begin{align}
+  \label{eq:2.11.10}
+  \Rightarrow X_{diag} =
+  \begin{bmatrix}
+    1 & 0 \\
+    0 & -1
+  \end{bmatrix} 
+\end{align}
+
+
+------------------------------------
+
+Pauli matrix $\sigma_2=\sigma_y$
+
+\begin{align}
+  \label{eq:2.11.11}
+  Y=
+  \begin{bmatrix}
+    0 & -i \\
+    i & 0
+  \end{bmatrix}
+\end{align}
+
+\begin{align}
+  \label{eq:2.11.12}
+  \Rightarrow 0 = c(\lambda_y)&=|Y-\lambda_y I|
+  =
+  \begin{vmatrix}
+    -\lambda_y & -i \\
+    i & -\lambda_y
+  \end{vmatrix}
+  =\lambda_y^2-1
+\end{align}
+
+\begin{align}
+  \label{eq:2.11.13}
+  \therefore \lambda_y=\pm 1
+\end{align}
+
+If $\lambda_{y,1}=1$, its eigenvector $\ket{v_{y,1}}$ is:
+
+\begin{align}
+  \label{eq:2.11.14}
+  \Rightarrow Y-\lambda_{y,1} I
+  =
+  \begin{bmatrix}
+    -1 & -i \\
+    i & -1
+  \end{bmatrix} 
+\end{align}
+
+\begin{align}
+  \label{eq:2.11.15}
+  \Rightarrow
+  \begin{bmatrix}
+    -1 & -i \\
+    i & -1
+  \end{bmatrix}
+  \begin{bmatrix}
+    a_{y,1} \\
+    a_{y,2}
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    0 \\
+    0
+  \end{bmatrix}
+\end{align}
+
+\begin{align}
+  \label{eq:2.11.16}
+  \Rightarrow \ket{v_{y,1}} = \frac{1}{\sqrt{2}}
+  \begin{bmatrix}
+    1 \\
+    i
+  \end{bmatrix} 
+\end{align}
+
+If $\lambda_{y,2}=-1$, its eigenvector $\ket{v_{y,2}}$ is:
+
+\begin{align}
+  \label{eq:2.11.17}
+  \Rightarrow Y-\lambda_{y,2} I
+  =
+  \begin{bmatrix}
+    1 & -i \\
+    i & 1
+  \end{bmatrix} 
+\end{align}
+
+\begin{align}
+  \label{eq:2.11.18}
+  \Rightarrow
+  \begin{bmatrix}
+    1 & -i \\
+    i & 1
+  \end{bmatrix}
+  \begin{bmatrix}
+    b_{y,1} \\
+    b_{y,2}
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    0 \\
+    0
+  \end{bmatrix}
+\end{align}
+
+\begin{align}
+  \label{eq:2.11.19}
+  \Rightarrow \ket{v_{y,2}} = \frac{1}{\sqrt{2}}
+  \begin{bmatrix}
+    1 \\
+    -i
+  \end{bmatrix} 
+\end{align}
+
+The matrix representation in the basis of the eigenvectors for this operator, is just a diagonal matrix with entries equal to the eigenvalues:
+
+\begin{align}
+  \label{eq:2.11.20}
+  \Rightarrow Y_{diag} =
+  \begin{bmatrix}
+    1 & 0 \\
+    0 & -1
+  \end{bmatrix} 
+\end{align}
+
+
+------------------------------------
+
+Pauli matrix $\sigma_3=\sigma_z$
+
+\begin{align}
+  \label{eq:2.11.21}
+  Z=
+  \begin{bmatrix}
+    1 & 0 \\
+    0 & -1
+  \end{bmatrix}
+\end{align}
+
+\begin{align}
+  \label{eq:2.11.22}
+  \Rightarrow 0 = c(\lambda_z)=|Z-\lambda_z I|
+  &=
+  \begin{vmatrix}
+    1-\lambda_z & 0 \\
+    0 & -1-\lambda_z
+  \end{vmatrix}\\
+  &=(1-\lambda_z)(-1-\lambda_z)
+  =\lambda_z^2-1
+\end{align}
+
+\begin{align}
+  \label{eq:2.11.23}
+  \therefore \lambda_z=\pm 1
+\end{align}
+
+If $\lambda_{z,1}=1$, its eigenvector $\ket{v_{z,1}}$ is:
+
+\begin{align}
+  \label{eq:2.11.24}
+  \Rightarrow Z-\lambda_{z,1} I
+  =
+  \begin{bmatrix}
+    0 & 0 \\
+    0 & -2
+  \end{bmatrix} 
+\end{align}
+
+\begin{align}
+  \label{eq:2.11.25}
+  \Rightarrow
+  \begin{bmatrix}
+    0 & 0 \\
+    0 & -2
+  \end{bmatrix}
+  \begin{bmatrix}
+    a_{z,1} \\
+    a_{z,2}
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    0 \\
+    0
+  \end{bmatrix}
+\end{align}
+
+\begin{align}
+  \label{eq:2.11.26}
+  \Rightarrow \ket{v_{z,1}} = \frac{1}{\sqrt{2}}
+  \begin{bmatrix}
+    a_{z,1} \\
+    0
+  \end{bmatrix} 
+\end{align}
+
+If $\lambda_{z,2}=-1$, its eigenvector $\ket{v_{z,2}}$ is:
+
+\begin{align}
+  \label{eq:2.11.27}
+  \Rightarrow Z-\lambda_{z,2} I
+  =
+  \begin{bmatrix}
+    2 & 0 \\
+    0 & 0
+  \end{bmatrix} 
+\end{align}
+
+\begin{align}
+  \label{eq:2.11.28}
+  \Rightarrow
+  \begin{bmatrix}
+    2 & 0 \\
+    0 & 0
+  \end{bmatrix}
+  \begin{bmatrix}
+    b_{z,1} \\
+    b_{z,2}
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    0 \\
+    0
+  \end{bmatrix}
+\end{align}
+
+\begin{align}
+  \label{eq:2.11.29}
+  \Rightarrow \ket{v_{z,2}} = \frac{1}{\sqrt{2}}
+  \begin{bmatrix}
+    0 \\
+    b_{z,2}
+  \end{bmatrix} 
+\end{align}
+
+The matrix representation in the basis of the eigenvectors for this operator, is just a diagonal matrix with entries equal to the eigenvalues:
+
+\begin{align}
+  \label{eq:2.11.30}
+  \Rightarrow Z_{diag} =
+  \begin{bmatrix}
+    1 & 0 \\
+    0 & -1
+  \end{bmatrix} 
+\end{align}
+
+
+\paragraph{2.12} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "chapter2_master"
+%%% End:
