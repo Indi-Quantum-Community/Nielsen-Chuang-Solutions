@@ -1,0 +1,153 @@
+
+
+
+
+\paragraph{2.19} \textbf{Pauli Matrices are unitary and Hermitian} \\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+We know the first Pauli matrix is the identity matrix, which is by definition unitary and hermitian:
+
+\begin{align}
+  \label{eq:2.19.1}
+  \sigma_0^{\dagger} = 
+  \begin{bmatrix}
+    1 & 0 \\
+    0 & 1
+  \end{bmatrix} = \sigma_0
+\end{align} 
+
+
+So, we have :
+\begin{align}
+    \sigma_0^{\dagger} \sigma_0 = 
+    \begin{bmatrix}
+        1 & 0 \\
+        0 & 1
+    \end{bmatrix}
+    \begin{bmatrix}
+        1 & 0 \\
+        0 & 1
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        1 & 0 \\
+        0 & 1
+    \end{bmatrix} = I
+\end{align}
+
+Similarly for the other Pauli Matrices, we have
+
+
+\begin{align}
+  \label{eq:2.19.2}
+  \sigma_1^{\dagger} = 
+  \begin{bmatrix}
+    0 & 1 \\
+    1 & 0
+  \end{bmatrix} = \sigma_1
+\end{align} 
+
+
+So, we have :
+\begin{align}
+    \sigma_1^{\dagger} \sigma_1 = 
+    \begin{bmatrix}
+        0 & 1 \\
+        1 & 0
+    \end{bmatrix}
+    \begin{bmatrix}
+        0 & 1 \\
+        1 & 0
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        1 & 0 \\
+        0 & 1
+    \end{bmatrix} = I
+\end{align}
+
+For $\sigma_2$ , we have:
+
+\begin{align}
+  \label{eq:2.19.2}
+  \sigma_2^{\dagger} = 
+  \begin{bmatrix}
+    0 & -i \\
+    i & 0
+  \end{bmatrix} = \sigma_2
+\end{align} 
+
+
+So, we have :
+\begin{align}
+    \sigma_2^{\dagger} \sigma_2 = 
+    \begin{bmatrix}
+        0 & -i \\
+        i & 0
+    \end{bmatrix}
+    \begin{bmatrix}
+        0 & -i \\
+        i & 0
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        1 & 0 \\
+        0 & 1
+    \end{bmatrix} = I
+\end{align}
+
+For $\sigma_3$:
+
+\begin{align}
+  \label{eq:2.19.3}
+  \sigma_3^{\dagger} = 
+  \begin{bmatrix}
+    1 & 0 \\
+    0 & -1
+  \end{bmatrix} = \sigma_3
+\end{align} 
+
+
+So, we have :
+\begin{align}
+    \sigma_3^{\dagger} \sigma_3 = 
+    \begin{bmatrix}
+        1 & 0 \\
+        0 & -1
+    \end{bmatrix}
+    \begin{bmatrix}
+        1 & 0 \\
+        0 & -1
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        1 & 0 \\
+        0 & 1
+    \end{bmatrix} = I
+\end{align}
+
+
+Hence, all Pauli matrices are unitary and hermitian.
+
+
+
+
+
+
+
+
+
+
+\paragraph{2.20} \textbf{Basis Change} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Given operator $A$, with two matrix representations $A'$ and $A''$, on a vector space $V$ with two different orthonormal basis, $|v_i\rangle$ and $|w_i\rangle$.
+The relation between them:
+
+$$ A'_{ij} = \langle v_i |A | v_j \rangle $$
+$$  \implies \sum_k \langle v_i | w_k \rangle \langle w_k |A | v_j \rangle $$
+$$  \implies \sum_{k,l} \langle v_i | w_k \rangle \langle w_k |A | w_l \rangle \langle w_l | v_j \rangle $$
+$$  \implies \sum_{k,l} \langle v_i |U| v_k \rangle \langle w_k |A | w_l \rangle \langle v_l |U^{\dagger}| v_j \rangle $$
+$$  \implies \sum_{k,l} U_{ik} A_{kl}^{''} U_{lj}^{\dagger} $$
+
+where $U \equiv \sum_m |w_m\rangle \langle v_m|$
+
+\paragraph{2.21} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
