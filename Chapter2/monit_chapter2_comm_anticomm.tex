@@ -1,0 +1,178 @@
+
+\paragraph{2.40} \textbf{Commutation relation for the Pauli Matrices} \\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+We have 
+$$ [X,Y] = XY-YX$$
+
+$$ [X,Y] = \begin{bmatrix}
+    0 & 1 \\ 1 & 0
+\end{bmatrix} \begin{bmatrix}
+    0 & -\iota \\ \iota & 0
+\end{bmatrix} - \begin{bmatrix}
+    0 & -\iota \\ \iota & 0
+\end{bmatrix} \begin{bmatrix}
+    0 & 1 \\ 1 & 0
+\end{bmatrix}$$
+$$ = \begin{bmatrix}
+    \iota & 0 \\ 0 & -\iota
+\end{bmatrix} - \begin{bmatrix}
+    -\iota & 0 \\ 0 & \iota
+\end{bmatrix}$$
+
+$$ = 
+\begin{bmatrix}
+    2 \iota & 0 \\ 0 & -2 \iota
+\end{bmatrix}$$
+ $$ = 2 \iota Z$$
+
+ $$ [Y,Z]= \begin{bmatrix}
+    0 & -\iota \\ \iota & 0
+\end{bmatrix} \begin{bmatrix}
+    1 & 0 \\ 0 & -1
+\end{bmatrix} - \begin{bmatrix}
+    1 & 0 \\ 0 & -1
+\end{bmatrix} \begin{bmatrix}
+    0 & -\iota \\ \iota & 0
+\end{bmatrix}$$
+
+
+$$ = 
+\begin{bmatrix}
+    0 & 2\iota \\ 2\iota & 0
+\end{bmatrix}$$
+ $$ = 2 \iota X$$
+
+ Similarly,
+
+ $$[Z,X] = \begin{bmatrix}
+     1 & 0 \\ 0 & -1
+ \end{bmatrix} \begin{bmatrix}
+     0 & 1 \\ 1 & 0
+ \end{bmatrix}
+ - \begin{bmatrix}
+     0 & 1 \\ 1 & 0
+ \end{bmatrix} \begin{bmatrix}
+     1 & 0 \\ 0 & -1
+ \end{bmatrix}$$
+
+ $$ = 2\iota \begin{bmatrix}
+     0 &-\iota \\ \iota & 0
+ \end{bmatrix}$$
+
+ $$ = 2\iota Y$$
+
+ \paragraph{2.41} \textbf{Anti-Commutation relation for the Pauli Matrices} \\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ We have 
+ $$ \{\sigma_1, \sigma_2\}  = \sigma_1 \sigma_2 + \sigma_2 \sigma_1$$
+
+ $$ = \begin{bmatrix}
+    0 & 1 \\ 1 & 0
+\end{bmatrix} \begin{bmatrix}
+    0 & -\iota \\ \iota & 0
+\end{bmatrix} + \begin{bmatrix}
+    0 & -\iota \\ \iota & 0
+\end{bmatrix} \begin{bmatrix}
+    0 & 1 \\ 1 & 0
+\end{bmatrix}$$
+$$ = \begin{bmatrix}
+    \iota & 0 \\ 0 & -\iota
+\end{bmatrix} + \begin{bmatrix}
+    -\iota & 0 \\ 0 & \iota
+\end{bmatrix}$$
+
+$$ = 0$$
+
+Similarly,
+$$ \{\sigma_2, \sigma_3\}  = 
+= \begin{bmatrix}
+    0 & -\iota \\ \iota & 0
+\end{bmatrix} \begin{bmatrix}
+    1 & 0 \\ 0 & -1
+\end{bmatrix} - \begin{bmatrix}
+    1 & 0 \\ 0 & -1
+\end{bmatrix} \begin{bmatrix}
+    0 & -\iota \\ \iota & 0
+\end{bmatrix}$$
+
+
+$$ = 0 $$
+
+and,
+$$ \{\sigma_3, \sigma_1\}  = = \begin{bmatrix}
+     1 & 0 \\ 0 & -1
+ \end{bmatrix} \begin{bmatrix}
+     0 & 1 \\ 1 & 0
+ \end{bmatrix}
+ - \begin{bmatrix}
+     0 & 1 \\ 1 & 0
+ \end{bmatrix} \begin{bmatrix}
+     1 & 0 \\ 0 & -1
+ \end{bmatrix}$$
+
+ $$ = 0$$
+
+and, we have
+$$ \sigma_0^2 = I^2 = I$$
+
+$$ \sigma_1^2 = \begin{bmatrix}
+    0 & 1 \\ 1 & 0
+\end{bmatrix}^2 = I$$
+
+$$ \sigma_2^2 = \begin{bmatrix}
+    0 & -i \\ i & 0
+\end{bmatrix}^2 = I$$
+
+$$ \sigma_3^2 = \begin{bmatrix}
+    1 & 0 \\ 0 & -1
+\end{bmatrix}^2 = I$$
+
+
+
+ \paragraph{2.42} \textbf{verify} \\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+$$\frac{[A,B] + \{A,B\}}{2} = \frac{AB - BA + AB + BA}{2} = AB$$
+
+
+
+ \paragraph{2.43} \textbf{Show $\sigma_j \sigma_k$} \\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+We know that $\{\sigma_j, \sigma_k\} = 2 \delta_{jk}I$
+using that
+$$ \sigma_j \sigma_k  = \frac{[\sigma_j, \sigma_k] + \{\sigma_j, \sigma_k\}}{2}$$
+
+$$ = \frac{2 \iota \sum_{i=1}^3 \epsilon_{jkl} \sigma_l + 2 \delta_{jk}I}{2}$$
+
+$$ \delta_{jk}I + \iota \sum_{l=1}^3 \epsilon_{jkl} \sigma_l$$
+
+
+
+ \paragraph{2.44} \textbf{$B$ must be zero} \\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+By Assumption, $[A,B] = 0$ and $\{A,B\} = 0$, then $AB =0$. Since $A$ is invertible, multiply by $A^{-1}$ from left,then
+$$ A^{-1}AB = 0$$
+$$ I B = 0$$
+$$ B = 0$$
+
+
+ \paragraph{2.45} \textbf{Verify} \\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+$$[A, B]^{\dagger} = (AB - BA)^{\dagger}$$
+
+$$ = B^{\dagger} A^{\dagger} - A^{\dagger}B^{\dagger}$$
+$$ = [B^{\dagger}, A^{\dagger}]$$
+
+ \paragraph{2.46} \textbf{Verify} \\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+$$ [A,B] = AB - BA$$
+
+$$ = -(BA - AB)$$
+
+$$ = -[B,A]$$
+
+ \paragraph{2.47} \textbf{Verify} \\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ $$ (\iota[A,B])^{\dagger} = \iota[A,B]^{\dagger}$$
+ $$ = \iota [B^{\dagger}, A^{\dagger}]$$
+ $$ - \iota [B, A]$$
+ $$ = \iota [A,B]$$
+
+
+ 

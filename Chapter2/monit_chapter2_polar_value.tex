@@ -1,0 +1,57 @@
+\paragraph{2.48} \textbf{Polar decomposition of $P$, $U$ and $H$}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\\
+Since $P$ is positive, it is diagonalizable. Then $P = \sum_{i} \lambda_i |i\rangle \langle i|$, where $\lambda_i \ge 0$
+
+$$ J = \sqrt{P^{\dagger} P }  = \sqrt{PP} = \sqrt{P^2} = \sum_i \sqrt{\lambda_i^2 }|i\rangle \langle i | = \sum_i \lambda_i |i\rangle \langle i| = P$$ 
+
+Therefore polar decomposition of $P $ is $P = UP$ for all $P$. Thus $U == I $ , then $P = P$
+
+For the unitary $U$:\\
+Suppose unitary $U$ is decomposed by $U = WJ$ where $W$ is unitary and $J$ is positive, $J = \sqrt{U^{\dagger}U}$
+
+$$ J = \sqrt{U^{\dagger}U} = \sqrt{I} = I$$
+
+Since unitary operators are invertible, $W = UJ^{-1} = UI^{-1} = UI = U$. Thus the polar decompositions of $U$ is $U = U$
+
+For the Hermitian $H$:\\
+Suppose $H = UJ$
+$$ J = \sqrt{H^{\dagger}H} = \sqrt{HH} = \sqrt{H^2}$$
+
+Thus $H = U \sqrt{H^2}$
+
+In general $H \ne \sqrt{H^2}$
+From spectral decomposition, $H = \sum_i \lambda_i |i\rangle \langle i|$, where $\lambda_i \in \mathbb{R}$
+
+$$ \sqrt{H^2} = \sqrt{\sum_i \lambda_i^2 |i\rangle \langle i|} = \sum_i \sqrt{\lambda_i^2} |i\rangle \langle i| = \sum_i |\lambda_i| |i\rangle \langle i | \ne H$$
+
+
+\paragraph{2.49} \textbf{Polar decomposition of Normal Matrix}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\\
+\\
+Normal matrix is diagonalizable, $A = \sum_i \lambda_i |i\rangle \langle i|$
+$$ J = \sqrt{A^{\dagger}A} = \sum_i |\lambda_i| |i\rangle \langle i|$$
+$$ U = \sum_i |e_i \rangle \langle i|$$
+$$ A = UJ = \sum_i|\lambda_i| |e_i\rangle \langle i|$$
+
+\paragraph{2.50} \textbf{Left and Right Polar Decomposition}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\\
+\\
+We have $A = \begin{bmatrix}
+    1 & 0 \\ 1 & 1 
+\end{bmatrix}$ and so we have $A^{\dagger}A = \begin{bmatrix}
+    2 & 1 \\ 1 & 1 
+\end{bmatrix}$
+
+Characteristic equation of $A^{\dagger}A$ is $det(A^{\dagger} A - \lambda I)) = \lambda^2 - 3 \lambda + 1 = 0$. Eigenvalues of $A^{\dagger}A$ are $\lambda_{\pm} = \frac{3\pm \sqrt{5}}{2}$ and the associated eigenvectors are $|\lambda_{\pm} \rangle = \frac{1}{\sqrt{10 \mp 2\sqrt{5}}} \begin{bmatrix}
+    2 \\ -1 \pm \sqrt{5}
+\end{bmatrix}$
+
+$$ A^{\dagger}A = \lambda_{+} |\lambda_{+} \rangle \langle \lambda_{+}| + \lambda_{-} |\lambda_{-}\rangle \langle \lambda_{-} \rangle \langle \lambda_{-}|$$
+
+$$ J = \sqrt{A^{\dagger}A} = \sqrt{\lambda_{+}} |\lambda_{+} \rangle \langle \lambda_{+}| + \sqrt{\lambda_{-}} |\lambda_{-}\rangle \langle \lambda_{-} \rangle \langle \lambda_{-}|$$
+
+Substituting all the values, you'll get:
+$$J^{-1} = \frac{1}{\sqrt{\lambda_{+}}} |\lambda_{+} \rangle \langle \lambda_{+}| + \frac{1}{\sqrt{\lambda_{-}}} |\lambda_{-} \rangle \langle \lambda_{-}|$$
+
+Which gives us $U = AJ^{-1}$
+
