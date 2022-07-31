@@ -1,0 +1,234 @@
+\paragraph{2.58} \textbf{Average Observed value of $M$}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\\
+$$ \langle M \rangle = \langle \psi |M| \psi \rangle = \langle \psi |m | \psi \rangle  = m \langle \psi | \psi \rangle = m$$
+
+$$ \langle M^2 \rangle = \langle \psi |M^2| \psi \rangle = \langle \psi |m^2 | \psi \rangle  = m^2 \langle \psi | \psi \rangle = m^2$$
+
+$$\text{ deviation } = \langle M^2 \rangle - \langle M \rangle^2 = m^2 - m^2 = 0$$
+
+\paragraph{2.59} \textbf{Average and Standard Deviation of $X$}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\\
+$$ \langle X \rangle = \langle 0 |X| 0\rangle = \langle 0 | 1 \rangle = 0$$
+
+$$ \langle X^2 \rangle = \langle 0 |X^2 | 0 \rangle = \langle 0 | X | 1\rangle = \langle 0| 0 \rangle = 1$$
+$$ \text{ standard deviation } = \sqrt{ \langle X^2 \rangle - \langle X \rangle^2 } = 1$$
+
+
+\paragraph{2.60} \textbf{}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\\
+\begin{align*}
+    \vec{v} \cdot \vec{\sigma} &= \sum_{i=1}^3 v_i \sigma_i\\
+    &= v_1 \begin{bmatrix}
+        0 & 1 \\
+        1 & 0
+    \end{bmatrix}
+    + v_2 \begin{bmatrix}
+        0 & -i \\
+        i & 0
+    \end{bmatrix}
+    + v_3 \begin{bmatrix}
+        1 & 0 \\
+        0 & -1
+    \end{bmatrix} \\
+    &= \begin{bmatrix}
+        v_3 & v_1 - i v_2 \\
+        v_1 + iv_2 & -v_3
+    \end{bmatrix}
+\end{align*}
+
+\begin{align*}
+    \det (\vec{v} \cdot \vec{\sigma}  - \lambda I) &= (v_3 - \lambda) (-v_3 - \lambda) - (v_1 - iv_2) (v_1 + iv_2)\\
+    &= \lambda^2 - (v_1^2 + v_2^2  + v_3^2)\\
+    &= \lambda^2 - 1 ~~~ (\because |\vec{v}| = 1)
+\end{align*}
+Eigenvalues are $\lambda = \pm 1$.
+
+
+(i) if $\lambda = 1$
+\begin{align*}
+	\vec{v} \cdot \vec{\sigma}  - \lambda I &= \vec{v} \cdot \vec{\sigma}  - I\\
+		&= \begin{bmatrix}
+    		v_3 - 1 & v_1 - i v_2 \\
+    		v_1 + i v_2 & - v_3 - 1
+		\end{bmatrix}
+\end{align*}
+
+Normalized eigenvector is $\ket{\lambda_1} = \sqrt{ \frac{1+v_3}{2 }} \begin{bmatrix}
+1 \\
+\frac{1-v_3}{v_1 - iv_2}
+\end{bmatrix} $.
+
+$$
+	\kb{\lambda_1} &= \frac{1+v_3}{2 } \begin{bmatrix}
+		1 \\
+		\frac{1-v_3}{v_1 - iv_2}
+	\end{bmatrix}
+	\begin{bmatrix}
+   		1 &
+   		\frac{1-v_3}{v_1 + iv_2}
+	\end{bmatrix}\\
+%
+	&=
+	 \frac{1+v_3}{2 } \begin{bmatrix}
+    	 1 & \frac{v_1 - iv_2}{1 + v_3} \\
+    	 \frac{v_1 + iv_2}{1 + v_3} & \frac{1-v_3}{1+v_3}
+	 \end{bmatrix} \\ $$
+  $$
+	 &=
+	 \frac{1}{2} \begin{bmatrix}
+    	 1+v_3 & v_1 - iv_2 \\
+    	 v_1 + iv_2 & 1 - v_3
+	 \end{bmatrix} \\
+	 &=
+	  \frac{1}{2} \left( I + \begin{bmatrix}
+    	 v_3 & v_1 - iv_2 \\
+    	 v_1 + iv_2 & - v_3
+	 \end{bmatrix} \right) \\
+	 &=
+	 \frac{1}{2} (I + \vec{v} \cdot \vec{\sigma} )
+$$
+
+
+
+(ii) If $\lambda = -1$.
+\begin{align*}
+	\vec{v} \cdot \vec{\sigma}  - \lambda I &= \vec{v} \cdot \vec{\sigma}  + I\\
+	&= \begin{bmatrix}
+		v_3 + 1 & v_1 - i v_2 \\
+		v_1 + i v_2 & - v_3 + 1
+	\end{bmatrix}
+\end{align*}
+
+Normalized eigenvalue is $\ket{\lambda_{-1}} = \sqrt{ \frac{1-v_3}{2 }} \begin{bmatrix}
+    1 \\
+    - \frac{1+v_3}{v_1 - iv_2}
+\end{bmatrix} $.
+
+
+
+	$$ \ket{\lambda_{-1}} &= \frac{1 - v_3}{2} 
+ \begin{bmatrix}
+	1 \\
+	- \frac{1+v_3}{v_1 - iv_2}
+	\end{bmatrix}
+	\begin{bmatrix}
+		1 & - \frac{1+v_3}{v_1 + iv_2}
+	\end{bmatrix}\\
+	&=
+	\frac{1 - v_3}{2} \begin{bmatrix}
+		1 & - \frac{v_1 - iv_2}{1 - v_3} \\
+		- \frac{v_1 + iv_2}{1 - v_3} & \frac{1+v_3}{1 - v_3}
+	\end{bmatrix} \\
+	&=
+	\frac{1}{2} \begin{bmatrix}
+		1 - v_3 & -(v_1 - iv_2) \\
+		- (v_1 + iv_2) & 1 + v_3
+	\end{bmatrix} \\
+	&=
+	\frac{1}{2} \left( I - \begin{bmatrix}
+		v_3 & v_1 - iv_2 \\
+		(v_1 + iv_2 & - v_3
+	\end{bmatrix} \right)\\
+	&= \frac{1}{2} (I - \vec{v} \cdot \vec{\sigma} ).
+$$
+
+
+	This proof has a defect.
+	The case $(v_1,v_2,v_3) = (0,0,1)$, second component of eigenstate, $\frac{1-v_3}{v_1 - iv_2}$, diverges.
+	So I implicitly assume $v_1 - iv_2 \neq 0$. Hence my proof is incomplete.
+
+	Since the exercise doesn't require explicit form of projector, we should prove the problem more abstractly.
+	In order to prove, we use the following properties of $\vec{v} \cdot \vec{\sigma}$
+	\begin{itemize}
+		\item $\vec{v} \cdot \vec{\sigma}$ is Hermitian
+		\item $(\vec{v} \cdot \vec{\sigma})^2 = I$ where $\vec{v}$ is a real unit vector.
+	\end{itemize}
+
+	We can easily check above conditions.
+	\begin{align*}
+	(\vec{v} \cdot \vec{\sigma})^\dagger &= (v_1 \sigma_1 + v_2 \sigma_2 + v_3 \sigma_3)^\dagger\\
+	&= v_1 \sigma_1^\dagger + v_2 \sigma_2^\dagger + v_3 \sigma_3^\dagger\\
+	&= v_1 \sigma_1 + v_2 \sigma_2 + v_3 \sigma_3~~~(\because \text{Pauli matrices are Hermitian.})\\
+	&= \vec{v} \cdot \vec{\sigma}
+	\end{align*}
+
+	\begin{align*}
+	(\vec{v} \cdot \vec{\sigma})^2 &= \sum_{j,k=1}^3 (v_j \sigma_j)  (v_k \sigma_k)\\
+	&= \sum_{j,k=1}^3 v_j v_k \sigma_j \sigma_k\\
+	&= \sum_{j,k=1}^3 v_j v_k \left(\delta_{jk}I + i \sum_{l=1}^3 \epsilon_{jkl}\sigma_l \right) ~~~(\because \text{eqn}(2.78)~ \text{page} 78)\\
+	&= \sum_{j,k=1}^3 v_j v_k \delta_{jk}I  + i \sum_{j,k,l=1}^3 \epsilon_{jkl} v_j v_k \sigma_l\\
+	&= \sum_{j=1}^3 v_j^2 I\\
+	&= I ~~~\left(\because \sum_j v_j^2 = 1 \right)
+	\end{align*}
+
+
+
+		Suppose $\ket{\lambda}$ is an eigenstate of $\vec{v} \cdot \vec{\sigma}$ with eigenvalue $\lambda$. Then
+		\begin{align*}
+		\vec{v} \cdot \vec{\sigma} \ket{\lambda} = \lambda \ket{\lambda}\\
+		(\vec{v} \cdot \vec{\sigma})^2 \ket{\lambda} = \lambda^2 \ket{\lambda}
+		\end{align*}
+		On the other hand $(\vec{v} \cdot \vec{\sigma})^2 = I$,
+		\begin{align*}
+		(\vec{v} \cdot \vec{\sigma})^2 \ket{\lambda} = I \ket{\lambda} = \ket{\lambda}\\
+		\therefore \lambda^2\ket{\lambda} = \ket{\lambda}.
+		\end{align*}
+		Thus $\lambda^2 = 1 \Rightarrow \lambda = \pm 1$. Therefore $\vec{v} \cdot \vec{\sigma}$ has eigenvalues $\pm 1$.
+
+		Let $\ket{\lambda_1}$ and $\ket{\lambda_{-1}}$ are eigenvectors with eigenvalues $1$ and $-1$, respectively.
+		I will prove that $P_{\pm} = \ket{\lambda_{\pm 1}}$.
+
+		In order to prove above equation, all we have to do is prove following condition. 
+
+			
+				$$\braket{\psi | (P_\pm - \kb{\lambda_{\pm 1}})| \psi} = 0 \text{ for all } \ket{\psi} \in \mathds{C}^2$$
+			
+
+
+		Since $\vec{v} \cdot \vec{\sigma}$ is Hermitian, $\ket{\lambda_1}$ and $\ket{\lambda_{-1}}$ are orthonormal vector ($\because $ Exercise 2.22).
+		Let $\ket{\psi} \in \mathds{C}^2$ be an arbitrary state. $\ket{\psi}$ can be written as
+		\begin{align*}
+		\ket{\psi} = \alpha \ket{\lambda_1} + \beta \ket{\lambda_{\pm 1}} ~~(|\alpha|^2 + |\beta|^2 = 1, \alpha, \beta \in \mathds{C}).
+		\end{align*}
+
+		\begin{align*}
+		\braket{\psi | (P_{\pm} - \kb{\lambda_\pm})| \psi}
+		%		&= \braket{\psi | \left(\frac{1}{2} (I \pm \vec{v} \cdot \vec{\sigma}) - \kb{\lambda_\pm}\right)| \psi}\\
+		&= \braket{\psi | P_\pm | \psi} - \braket{\psi | \lambda_\pm} \braket{\lambda_\pm | \psi}.\\
+		\braket{\psi | P_\pm | \psi} &= \braket{\psi | \frac{1}{2}(I \pm \vec{v} \cdot \vec{\sigma}) | \psi}\\
+		&= \frac{1}{2} \pm \frac{1}{2} \braket{\psi | \vec{v} \cdot \vec{\sigma})| \psi}\\
+		&= \frac{1}{2} \pm \frac{1}{2} (|\alpha|^2 - |\beta|^2)\\
+		&= \frac{1}{2} \pm \frac{1}{2} (2|\alpha|^2 - 1) ~~~(\because |\alpha|^2 + |\beta|^2 = 1)\\
+		\braket{\psi | \lambda_1} \braket{\lambda_1 | \psi} &= |\alpha|^2\\
+		\braket{\psi | \lambda_{-1}} \braket{\lambda_{-1}| \psi} &= |\beta|^2 = 1  - |\alpha|^2
+		\end{align*}
+
+		Therefore $\braket{\psi | (P_\pm - \kb{\lambda_{\pm 1}})| \psi} = 0$ for all $\ket{\psi} \in \mathds{C}^2$.
+		Thus $P_\pm = \kb{\lambda_{\pm 1}}$.
+
+
+
+
+
+
+\paragraph{2.61} \textbf{Calculate the Probability}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\\
+
+$$ \langle \lambda_1 | 0 \rangle \langle 0|\lambda_1 \rangle - \langle 0 | \lambda_1 \rangle \langle \lambda_1|0\rangle$$
+$$ = \langle 0 | \frac{1}{2}(I + \vec{v}\cdot \vec{\sigma}|0\rangle$$
+$$ \frac{1}{2}(1+ v_3)$$
+
+and the state after measurement is 
+$$ \frac{|\lambda_1\rangle \langle \lambda_1 | 0\rangle}{\sqrt{\langle 0 | \lambda_1 \rangle \langle \lambda_1| 0\rangle}} = \frac{1}{\sqrt{\frac{1}{2} ( 1 + v_3)}} \cdot \frac{1}{2}\begin{bmatrix}
+    1 + v_3 \\ v_1 + \iota v_2
+\end{bmatrix}$$
+
+$$= \sqrt{\frac{1}{2}( 1 + v_3)} \cdot \begin{bmatrix}
+    1  \\ \frac{v_1 + \iota v_2}{1 + v_3}
+\end{bmatrix}$$
+
+$$ = \sqrt{\frac{1+ v_3}{2}} \begin{bmatrix}
+    1 \\ \frac{1 - v_3}{v_1 - \iota v_2}
+\end{bmatrix}$$
+
+$$ = |\lambda_1\rangle$$
