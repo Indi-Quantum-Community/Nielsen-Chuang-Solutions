@@ -1,0 +1,66 @@
+
+
+\paragraph{2.66} \textbf{Average Value} \\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Let $|\psi\rangle = \frac{|00\rangle + |11\rangle }{\sqrt{2}}$. Then,
+
+$$ E(X_1 Z_2) = \langle \psi | X_1 Z_2 | \psi\rangle$$
+$$ = \frac{1}{2} ( \langle 00 | X_1 Z_2 | 00\rangle) + ( \langle 00 | X_1 Z_2 | 11\rangle) + ( \langle 11 | X_1 Z_2 | 00\rangle) + ( \langle 11 | X_1 Z_2 | 11\rangle) $$
+
+$$ \frac{1}{2}(\langle 00 | 10\rangle - \langle 00 | 01 \rangle + \langle 11 | 10\rangle - \langle 11 | 01\rangle$$
+$$ = 0$$
+
+\paragraph{2.67} \textbf{$V \approx $ Hilbert Space } \\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Suppose $W^\perp$ is the orthogonal complement of $W$. Then $V = W \oplus W^\perp$.
+Let $\ket{w_i},\ket{w_j'},\ket{u_j'}$ be orthonormal bases for $W$, $W^\perp$, $\left( \mathrm{image}(U) \right)^\perp$, respectively.
+
+% Define $U'$ as $U'|_W\ket{w_i} = U\ket{w_i} (= \ket{u_i})$ and $U'|_{W^\perp}\ket{w_j'} = \ket{u_j'}$
+Define $U': V \rightarrow V$ as $U' = \sum_i \kbt{u_i}{w_i} + \sum_j \kbt{u_j'}{w_j'}$,
+where $\ket{u_i} = U \ket{w_i}$.
+
+
+Now
+\begin{align*}
+    (U')^\dagger U' &= \left( \sum_{i = 1}^{\dim W} \kbt{w_i}{u_i} + \sum_{j = 1}^{\dim W^\perp} \kbt{w_j'}{u_j'} \right)  \left( \sum_i \kbt{u_i}{w_i} + \sum_j \kbt{u_j'}{w_j'} \right)\\
+                    &= \sum_i \kb{w_i} + \sum_j \kb{w_j'} = I
+\end{align*}
+%
+and
+%
+\begin{align*}
+    U' (U')^\dagger &= \left( \sum_i \kbt{u_i}{w_i} + \sum_j \kbt{u_j'}{w_j'} \right) \left( \sum_i \kbt{w_i}{u_i} + \sum_j \kbt{w_j'}{u_j'} \right)\\
+                    &= \sum_i \kb{u_i} + \sum_j \kb{u_j'} = I.
+\end{align*}
+%
+Thus $U'$ is an unitary operator.
+Moreover, for all $\ket{w} \in W$,
+\begin{align*}
+    U' \ket{w} &= \left( \sum_i \kbt{u_i}{w_i} + \sum_j \kbt{u_j'}{w_j'} \right) \ket{w}\\
+               &= \sum_i \ket{u_i} \braket{w_i | w} + \sum_j \ket{u_j'} \braket{w_j' | w}\\
+			   &= \sum_i \ket{u_i} \braket{w_i | w}  ~~~(\because \ket{w_j'} \perp \ket{w})\\
+			   &= \sum_i U \ket{w_i} \braket{w_i | w}\\
+			   &= U \ket{w}.
+\end{align*}
+%
+Therefore $U'$ is an extension of $U$.
+
+
+\paragraph{2.68} \textbf{$|\psi\rangle \ne |a\rangle |b\rangle$} \\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Suppose one of the bell states:
+$$|\psi\rangle = (|00\rangle + |11\rangle) / \sqrt{2}$$ can be written as a product of single particle states
+$$ |a\rangle = \alpha_a |0\rangle + \beta_a |1\rangle$$
+$$ |b\rangle = \alpha_b |0\rangle + \beta_b |1\rangle$$
+
+Then
+$$|a\rangle |b\rangle = \alpha_a \alpha_b |00\rangle + \alpha_a \beta_b |01\rangle  + \beta_a \alpha_b |10\rangle + \beta_a \beta_b |11\rangle $$
+
+Comparing this with the bell state
+$|\psi\rangle = (|00\rangle + |11\rangle) / \sqrt{2}$
+ we have 
+$$ \alpha_a \beta_b = 0$$
+
+$$ \beta_a \alpha_b = 0$$
+
+This contradicts $|\psi\rangle = |a\rangle|b\rangle$. So $|\psi\rangle \ne |a\rangle |b\rangle$ for all single qubits states $|a\rangle $ and $|b\rangle$.
