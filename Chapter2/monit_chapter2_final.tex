@@ -1,0 +1,20 @@
+\paragraph{2.1} \textbf{}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\\
+
+From Exercise 2.35, $\vec{n} \cdot \vec{\sigma}$ is decomposed as
+\begin{align*}
+	\vec{n} \cdot \vec{\sigma} &= \ket{\lambda_1}\bra{\lambda_1} - \ket{\lambda_1}\bra{\lambda_{-1}}
+\end{align*}
+where $\ket{\lambda_{\pm 1}}$ are eigenvector of $\vec{n} \cdot \vec{\sigma}$ with eigenvalues $\pm 1$.
+
+Thus
+\begin{align*}
+	f(\theta \vec{n} \cdot \vec{\sigma}) &= f(\theta) \ket{\lambda_1}\bra{\lambda_1} + f(- \theta) \ket{\lambda_{-1}}\bra{\lambda_{-1}}\\
+		&= \left( \frac{f(\theta) + f(-\theta)}{2} + \frac{f(\theta) - f(-\theta)}{2}  \right) \ket{\lambda_1}\bra{\lambda_1} + \left( \frac{f(\theta) + f(-\theta)}{2} - \frac{f(\theta) - f(-\theta)}{2}  \right)\ket{\lambda_{-1}}\bra{\lambda_{-1}}\\
+		&= \frac{f(\theta) + f(-\theta)}{2} \left( \ket{\lambda_1}\bra{\lambda_1}+ \ket{\lambda_{-1}}\bra{\lambda_{-1}} \right) +  \frac{f(\theta) - f(-\theta)}{2} \left(\ket{\lambda_1}\bra{\lambda_1} - \ket{\lambda_{-1}}\bra{\lambda_{-1}} \right)\\
+		&= \frac{f(\theta) + f(-\theta)}{2} I + \frac{f(\theta) - f(-\theta)}{2} \vec{n} \cdot \vec{\sigma}
+\end{align*}
+
+
+\paragraph{2.2} \textbf{}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\\

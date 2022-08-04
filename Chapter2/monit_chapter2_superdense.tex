@@ -1,0 +1,228 @@
+\paragraph{2.69} \textbf{Bell Basis}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\\
+
+We know the bell states are:
+
+$$|\psi_1\rangle = \frac{\ket{00}+\ket{11}}{\sqrt{2}} = \frac{1}{\sqrt{2}}\begin{bmatrix}
+    1 \\ 0 \\ 0 \\ 1
+\end{bmatrix}$$
+
+$$|\psi_2\rangle = \frac{\ket{00}-\ket{11}}{\sqrt{2}} = \frac{1}{\sqrt{2}}\begin{bmatrix}
+    1 \\ 0 \\ 0 \\ -1
+\end{bmatrix}$$
+
+$$|\psi_3\rangle = \frac{\ket{01}+\ket{10}}{\sqrt{2}} = \frac{1}{\sqrt{2}}\begin{bmatrix}
+    0 \\ 1 \\ 1 \\ 0
+\end{bmatrix}$$
+
+$$|\psi_4\rangle = \frac{\ket{01}-\ket{10}}{\sqrt{2}} = \frac{1}{\sqrt{2}}\begin{bmatrix}
+    0 \\ 1 \\ -1 \\ 0
+\end{bmatrix}$$
+
+To form a basis, it must be linearly independent, Hence:
+
+$$ a_1 \ket{\psi_1} + a_2 \ket{\psi_2} + a_3 \ket{\psi_3} + a_4 \ket{\psi_4} = 0$$
+
+$$ \implies \frac{1}{\sqrt{2}} \begin{bmatrix}
+    a_1 + a_2 \\ a_3 + a_4 \\ a_3 - a_4 \\ a_1 - a_2
+\end{bmatrix} = 0$$
+
+$$ \implies a_1 = a_2 = a_3 = a_4 = 0$$
+
+Thus $\{\ket{\psi_i}\}$ is a linearly independent basis.
+
+Moreover $||\ket{\psi_i}|| = 1$ and $\braket{\psi_i|\psi_j} = \delta_{ij}$ for $i, j = 1,2,3,4$. Thus it forms an orthonormal basis.
+
+\paragraph{2.70} \textbf{Bell States}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\\
+For any Bell state we have $ \braket{\psi_i| E \otimes I|\psi_i} = \frac{1}{2}(\braket{0|E|0} + \braket{1|E|1})$
+
+Suppose Eve measures the qubit Alice sent by measurement operators $M_m$. The probability that Eve get result $m$ is $p_i(m) = \braket{\psi_i|M_m^{\dagger} M_m \otimes I | \psi_i}$ Since $M_m^{\dagger}M_m$ is positive , $p_i(m)$ are same values for all $\ket{\psi_i}$ . Thus Eve can't distinguish Bell states.
+
+
+\paragraph{2.71} \textbf{Mixed or Pure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\\
+ We know from spectral decomposition
+ $$ \rho = \sum_i p_i  |\psi_i\rangle \langle\psi_i|, \ \ p_i \ge 0 , \ \ \sum_i p_i = 1$$
+$$ \rho^2 = \sum_{i,j} p_i p_j |i\rangle \langle i|  |j\rangle \langle j|$$
+$$ = \sum_{i,j} p_i p_j  |i\rangle \langle i| \delta_{ij}$$
+$$ = \sum_i p_i^2  |i\rangle \langle i|$$
+
+$$ Tr(\rho^2) = Tr(\sum_i p_i^2  |i\rangle \langle i|) = \sum_i p_i^2 Tr( |i\rangle \langle i|) = \sum_i p_i^2  |i\rangle \langle i| = \sum_i p_i^2 \ge \sum_i p_i = 1$$
+
+Suppose $Tr(\rho^2) = 1$. Then $\sum_i p_i^2 = 1$. Since $p_i^2 < p_i$ for $0 < p_i < 1$, only single $p_i $ should be $1$ and otherwise have to vanish. Therefore $\rho =  |\psi_i\rangle \langle \psi_i|$. It is a pure state.
+
+Conversely if $\rho$ is pure, then $\rho =  |\psi_i\rangle \langle \psi_i|$
+$$ Tr(\rho^2) = Tr( |\psi_i\rangle \langle \psi_i| |\psi_i\rangle \langle \psi_i|) = Tr( |\psi_i\rangle \langle \psi_i|) =  |\psi_i\rangle \langle \psi_i| = 1$$
+
+
+\paragraph{2.72} \textbf{Bloch Sphere}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\\
+
+(1) Since density matrix is Hermitian, matrix representation is
+$\rho = \begin{bmatrix}
+    a & b \\ b^* & d
+\end{bmatrix}$,
+$a, d \in \mathbb{R}$ and $b \in \mathbb{C}$ w.r.t. standard basis.
+Because $\rho$ is density matrix, $\Tr(\rho) = a+d = 1$.
+
+Define $a = (1+r_3)/2$, $d = (1-r_3)/2$ and $b = (r_1 - \iota r_2)/2$, $(r_i \in \mathbb{R})$.
+
+In this case,
+$$
+    \rho = \begin{bmatrix}
+        a & b \\ b^* & d
+    \end{bmatrix}
+    =
+    \frac{1}{2} \begin{bmatrix}
+        1+r_3 & r_1 - ir_2 \\
+        r_1 + ir_2 & 1 - r_3
+    \end{bmatrix}
+    =
+    \frac{1}{2} (I + \vec{r} \cdot \vec{\sigma}).
+$$
+Thus for arbitrary density matrix $\rho$ can be written as $\rho = \frac{1}{2} (I + \vec{r} \cdot \vec{\sigma})$.
+
+Next, we derive the condition that $\rho$ is positive.
+
+If $\rho$ is positive, all eigenvalues of $\rho$ should be non-negative.
+$$
+    \det (\rho - \lambda I) &= (a-  \lambda) (b - \lambda) - |b|^2 = \lambda^2 - (a+d)\lambda + ad - |b^2| = 0$$
+    $$
+    \lambda = \frac{(a+d) \pm \sqrt{(a+d)^2 - 4 (ad - |b|^2)}}{2}$$
+    $$
+        = \frac{1 \pm \sqrt{1 - 4 \left(\frac{1 - r_3^2}{4} - \frac{r_1^2 + r_2^2}{4} \right)}}{2}$$
+        $$
+        = \frac{1 \pm \sqrt{1 - (1 - r_1^2 - r_2^2 - r_3^2)}}{2}\\
+        = \frac{1 \pm \sqrt{|\vec{r}|^2}}{2}\\
+        = \frac{1 \pm |\vec{r}|}{2}
+$$
+
+Since $\rho$ is positive, $\frac{1 - |\vec{r}|}{2} \geq 0 \rightarrow |\vec{r}| \leq 1$.
+
+Therefore an arbitrary density matrix for a mixed state qubit is written as $\rho = \frac{1}{2} (I + \vec{r} \cdot \vec{\sigma})$.
+
+\vspace{5mm}
+(2)
+
+$\rho = I / 2 \rightarrow \vec{r}  = 0$. Thus  $\rho = I / 2$ corresponds to the origin of Bloch sphere.
+
+\vspace{5mm}
+(3)
+
+$$
+    \rho^2 = \frac{1}{2} (I + \vec{r} \cdot \vec{\sigma})~ \frac{1}{2} (I + \vec{r} \cdot \vec{\sigma})$$
+    $$
+        = \frac{1}{4} \left[ I + 2 \vec{r}\cdot \vec{\sigma} + \sum_{j,k}r_j r_k \left(\delta_{jk} I + i \sum_{l=1}^3 \epsilon_{jkl}\sigma_l \right)  \right]$$
+        $$
+        = \frac{1}{4} \left(I + 2 \vec{r}\cdot \vec{\sigma} + |\vec{r}|^2 I \right)$$
+        $$\Tr (\rho^2) = \frac{1}{4} (2 + 2|\vec{r}|^2)$$
+
+If $\rho$ is pure, then $\Tr (\rho^2) = 1$.
+$$   1 =  \Tr (\rho^2) = \frac{1}{4} (2 + 2|\vec{r}|^2)$$
+$$   \therefore |\vec{r}| = 1.$$
+
+Conversely, if $|\vec{r}| = 1$, then $\Tr (\rho^2) = \frac{1}{4} (2 + 2|\vec{r}|^2) = 1$. Therefore $\rho$ is pure.
+
+
+\paragraph{2.73} \textbf{}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\\
+
+\begin{screen}
+    \Textbf{Theorem 2.6}
+%
+    \begin{align*}
+        \rho = \sum_i p_i \kb{\psi_i}
+            = \sum_i \kb{\tilde{\psi_i}}
+            = \sum_j \kb{\tilde{\varphi}_j}
+            = \sum_j q_j \kb{\varphi_j}
+                ~~ \Leftrightarrow ~~
+            \ket{\tilde{\psi}_i} = \sum_j u_{ij} \ket{\tilde{\varphi}_j}
+    \end{align*}
+    where $u$ is unitary.
+
+	The-transformation in theorem 2.6, $\ket{\tilde{\psi}_i} = \sum_j u_{ij} \ket{\tilde{\varphi}_j}$, corresponds to
+	\begin{align*}
+	    \left[ \ket{\tilde{\psi}_1} \cdots \ket{\tilde{\psi}_k} \right] = \Big[ \ket{\tilde{\varphi}_1} \cdots \ket{\tilde{\varphi}_k} \Big] U^T
+	\end{align*}
+	where $k = \mathrm{rank} (\mathcal{\rho})$.
+    \begin{align}
+        \sum_i \kb{\tilde{\psi_i}} &= \left[ \ket{\tilde{\psi}_1} \cdots \ket{\tilde{\psi}_k} \right]
+            \begin{bmatrix}
+                \bra{\tilde{\psi_1}}\\
+                \vdots\\
+                \bra{\tilde{\psi_k}}
+            \end{bmatrix}\\
+        &= \Big[ \ket{\tilde{\varphi}_1} \cdots \ket{\tilde{\varphi}_k} \Big] U^T
+            U^* \begin{bmatrix}
+                    \bra{\tilde{\varphi}_1}\\
+                    \vdots\\
+                    \bra{\tilde{\varphi}_k}
+            \end{bmatrix}\\
+        &= \Big[ \ket{\tilde{\varphi}_1} \cdots \ket{\tilde{\varphi}_k} \Big]
+             \begin{bmatrix}
+                \bra{\tilde{\varphi}_1}\\
+                \vdots\\
+                \bra{\tilde{\varphi}_k}
+            \end{bmatrix}\\
+        &= \sum_j \kb{\tilde{\varphi}_j}.
+    \end{align}
+\end{screen}
+
+From spectral theorem, density matrix $\rho$ is decomposed as $\rho = \sum_{k=1}^{d} \lambda_k \kb{k}$ where $d = \dim \mathcal{H}$.
+Without loss of generality, we can assume $p_k > 0$ for $k = 1 \cdots , l$ where $l = \mathrm{rank} (\rho)$ and $p_k = 0$ for $k = l+1, \cdots, d$.
+Thus $\rho = \sum_{k=1}^{l} p_k \kb{k} = \sum_{k=1}^{l} \kb{\tilde{k}}$, where $\ket{\tilde{k}} = \sqrt{\lambda_k} \ket{k}$.
+
+Suppose $\ket{\psi_i}$ is a state in support $\rho$. Then
+\begin{align*}
+	\ket{\psi_i} = \sum_{k=1}^l c_{ik} \ket{k}, ~~ \sum_k |c_{ik}|^2 = 1.
+\end{align*}
+
+Define $\displaystyle p_i = \frac{1}{\sum_k \frac{|c_{ik}|^2}{\lambda_k} }$ and $\displaystyle u_{ik} = \frac{\sqrt{p_i} c_{ik}}{\sqrt{\lambda_k}}$.
+
+Now
+\begin{align*}
+	\sum_k |u_{ik}|^2 = \sum_k \frac{p_i | c_{ik} |^2 }{\lambda_k} = p_i \sum_k \frac{| c_{ik} |^2 }{\lambda_k} = 1.
+\end{align*}
+
+Next prepare an unitary operator
+\footnote{By Gram-Schmidt procedure construct an orthonormal basis $\{\boldsymbol{u}_j\}$ (row vector) with $\boldsymbol{u}_i = [u_{i1} \cdots u_{ik} \cdots u_{il}]$. Then define unitary $U = \begin{bmatrix}
+    \boldsymbol{u}_1 \\ 
+    \vdots \\ 
+    \boldsymbol{u}_i \\ 
+    \vdots \\ 
+    \boldsymbol{u}_l
+    \end{bmatrix}$.}
+such that $i$th row of $U$ is $[u_{i1} \cdots u_{ik} \cdots u_{il}]$.
+Then we can define another ensemble such that
+\begin{align*}
+	\Big[  \ket{\tilde{\psi}_1} \cdots  \ket{\tilde{\psi}_i} \cdots \ket{\tilde{\psi}_l}\Big] = \Big[ \ket{\tilde{k}_1} \cdots \ket{\tilde{k}_l} \Big] U^T
+\end{align*}
+where $\ket{\tilde{\psi_i}} = \sqrt{p_i} \ket{\psi_i}$.
+From theorem 2.6,
+\begin{align*}
+	\rho = \sum_k \kb{\tilde{k}} = \sum_k \kb{\tilde{\psi}_k}.
+\end{align*}
+
+Therefore we can obtain a minimal ensemble for $\rho$ that contains $\ket{\psi_i}$.
+
+Moreover since $\rho^{-1} = \sum_k \frac{1}{\lambda_k} \kb{k}$,
+\begin{align*}
+	\braket{\psi_i | \rho^{-1} | \psi_i} = \sum_k \frac{1}{\lambda_k} \braket{\psi_i | k} \hspace{-1mm} \braket{k | \psi_i} = \sum_k \frac{|c_{ik}|^2}{\lambda_k} = \frac{1}{p_i}.
+\end{align*}
+
+Hence, $ \frac{1}{\braket{\psi_i | \rho^{-1} | \psi_i}} = p_i $.
+
+
+\paragraph{2.74} \textbf{}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\\
+
+We know
+$$ \rho_{AB} = |a\rangle \langle a|_A \otimes |b\rangle \langle b|_B$$
+
+$$\rho_A = Tr_B \rho_{AB} = |a\rangle \langle a| Tr(|b\rangle \langle b|) = |a\rangle \langle a|$$
+
+$$ Tr(\rho_{A}^2) = 1$$
+
+Thus $\rho_{A}$ is pure.
+
