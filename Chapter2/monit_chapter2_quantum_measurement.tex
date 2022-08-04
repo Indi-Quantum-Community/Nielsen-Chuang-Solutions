@@ -1,0 +1,52 @@
+\paragraph{2.54} \textbf{$\exp{A} \exp{B} = \exp{A + B}$}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\\
+Since $[A,B] = 0$, $A$ and $B$ are simultaneously diagonlizable , $A = \sum_i a_i |i\rangle \langle i |$, and $B = \sum_i b_i |i\rangle \langle i |$.
+
+So, 
+$$ \exp{A} \exp{B} = \bigg( \sum_i \exp{a_i}|i\rangle \langle i |\bigg) \bigg( \exp{b_I} |i\rangle \langle i | $$
+
+$$ = \sum_{i,j} \exp{a_i + b_j}|i\rangle \langle i | j\rangle \langle j | $$
+
+$$ = \sum_{i,j} \exp{a_i + b_j}|i\rangle \langle j | \delta_{i,j}$$
+
+$$ = \sum_{i} \exp{a_i + b_i}|i\rangle \langle i |$$
+
+$$ \exp{A+B}$$
+
+\paragraph{2.55} \textbf{$U(t_1, t_2)$ is unitary}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\\
+$$ H = \sum_{E} E |E\rangle \langle E|$$
+
+$$ U(t_2 - t_1) U^{\dagger} (t_2 - t_1) = \exp{\frac{-\iota H (t_2 - t_1)}{\hbar}} \exp{\frac{\iota H (t_2 - t_1)}{\hbar}} $$
+
+$$ = \sum_{E,E'}\bigg(\exp{\frac{-\iota E (t_2 - t_1)}{\hbar}} |E\rangle \langle E|\bigg) \bigg(\exp{\frac{-\iota E' (t_2 - t_1)}{\hbar}} |E'\rangle \langle E'|\bigg) $$
+$$ = \sum_E \exp{0} |E\rangle \langle E|$$
+
+$$ \sum_E |E\rangle \langle E|$$
+$$ = I$$
+
+Similarly , $U^{\dagger}(t_2 - t_1)U(t_2 - t_1) = I$
+
+\paragraph{2.56} \textbf{Spectral Decomposition}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\\
+$$ U = \sum_i \lambda_i |\lambda_i \rangle \langle \lambda_i|$$
+Now,
+$$ \log(U) = \sum_{j} \log(\lambda_j) |\lambda_j \rangle \langle \lambda_j| = \sum_j \iota \theta_j |\lambda_j\rangle \langle \lambda_j|$$
+where $\theta_j = \text{ arg }(\lambda_j)$
+$$ K = \iota \log(U) = \sum_j \theta_j |\lambda_j\rangle \langle \lambda_j|$$
+
+$$ K^{\dagger} =  (\iota \log U)^{\dagger}  = \bigg( \sum_j \theta_j |\lambda_j\rangle \langle \lambda_j| \bigg)^{\dagger} = \sum_j \theta_j |\lambda_j\rangle \langle \lambda_j| = K$$
+
+\paragraph{2.57} \textbf{Cascaded Measurements are single measurements}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\\
+We have 
+$$ |\phi\rangle = \frac{ L_l |\psi\rangle}{\sqrt{\langle \psi| L_l^{\dagger } L_l | \psi\rangle}}$$
+
+$$ \langle \phi| M_m^{\dagger} M_m|\phi \rangle = \frac{ \langle \psi| L_l^{\dagger }M_m^{\dagger} M_m L_l |\psi\rangle}{\langle \psi| L_l^{\dagger } L_l | \psi\rangle}$$
+
+$$ \frac{M_m |\phi\rangle}{\sqrt{\langle \phi | M_m^{\dagger} M_m| \phi\rangle}} = \frac{M_m L_l |\phi\rangle}{\sqrt{\langle \phi |L_l^{\dagger} L_l| \phi\rangle}} = 
+\frac{\sqrt{\langle \psi| L_l^{\dagger} L_l|\psi\rangle }}{\sqrt{\langle \psi |  L_l^{\dagger }M_m^{\dagger} M_m L_l |\psi\rangle}}$$
+
+$$ = \frac{M_m L_l|\psi\rangle}{\sqrt{\langle \psi |  L_l^{\dagger }M_m^{\dagger} M_m L_l |\psi\rangle}}$$
+
+$$ = \frac{N_{lm}|\psi\rangle}{\sqrt{\langle \psi | N_{lm}^{\dagger} N_{lm} |\psi\rangle}}$$
