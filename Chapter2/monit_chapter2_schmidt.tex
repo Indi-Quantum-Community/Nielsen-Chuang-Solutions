@@ -1,0 +1,248 @@
+
+\paragraph{2.75} \textbf{Reduced Density} \\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Define $\ket{\Phi_\pm} = \frac{1}{\sqrt{2}} (\ket{00} \pm \ket{11})$ and $\ket{\Psi_\pm} = \frac{1}{\sqrt{2}} (\ket{01} \pm \ket{10})$.
+$$	\ket{\Phi_\pm} \bra{\Phi_\pm}_{AB} = \frac{1}{2} (\ket{00} \bra{00} \pm \ket{00} \bra{11} \pm \ket{11} \bra{00} + \ket{11} \bra{11})$$
+ $$ Tr_B (\ket{\Phi_\pm} \bra{\Phi_\pm}_{AB}) = \frac{1}{2} (\ket{0} \bra{0} + \ket{1} \bra{1}) = \frac{I}{2}$$
+ $$	\ket{\Psi_\pm} \bra{\Psi_\pm} = \frac{1}{2} (\ket{01} \bra{01} \pm \ket{01} \bra{10} \pm \ket{10} \bra{01} + \ket{10} \bra{10})$$
+ $$	Tr_B (\ket{\Psi_\pm} \bra{\Psi_\pm}) = \frac{1}{2} (\ket{0} \bra{0} + \ket{1} \bra{1}) = \frac{I}{2}$$
+
+
+ \paragraph{2.76} \textbf{Extend Proof} \\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ Click \url{https://en.wikipedia.org/wiki/Schmidt_decomposition#Proof} to check the proof
+
+
+\paragraph{2.77} \textbf{ABC three components} \\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+$$
+	\ket{\psi}  =  \ket{0}  \ket{\Phi_+}$$
+ $$ = \ket{0} \left[\frac{1}{\sqrt{2}}(\ket{00} + \ket{11})\right]$$
+ 
+ $$= (\alpha \ket{\phi_0} + \beta \ket{\phi_1})  \left[\frac{1}{\sqrt{2}}(\ket{\phi_0 \phi_0} + \ket{\phi_1 \phi_1})\right]$$
+ 
+where $\ket{\phi_i}$ are arbitrary orthonormal states and $\alpha, \beta \in \mathds{C}$.
+We cannot vanish cross term. Therefore $\ket{\psi}$ cannot be written as $\ket{\psi} = \sum_i \lambda_i \ket{i}_A \ket{i}_B \ket{i}_C$.
+
+
+\paragraph{2.78} \textbf{Schmidt Number} \\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{proof}
+	First Part
+
+	If $\ket{\psi}$ is product, then there exist a state $\ket{\phi_A}$ for system $A$, and a state $\ket{\phi_B}$ for system $B$ such that
+	$\ket{\psi} = \ket{\phi_A} \ket{\phi_B}$.
+
+	Obviously, this Schmidt number is  1.
+
+	Conversely, if Schmidt number is 1, the state is written as $\ket{\psi} = \ket{\phi_A} \ket{\phi_B}$.
+	Hence this is a product state.
+\end{proof}
+
+
+\begin{proof}
+	Later part.
+
+	($\Rightarrow$) Proved by exercise 2.74.
+
+	($\Leftarrow$) Let a pure state be  $\ket{\psi} = \sum_i \lambda_i \ket{i_A} \ket{i_B}$. Then $\rho_A = Tr_B (\ket{\psi} \bra{\psi}) = \sum_i \lambda_i^2 \ket{i} \bra{i}$.
+	If $\rho_A$ is a pure state, then $\lambda_j = 1$ and otherwise 0 for some $j$.
+	It follows that  $\ket{\psi_j} = \ket{j_A} \ket{j_B}$. Thus $\ket{\psi}$ is a product state.
+\end{proof}
+
+\paragraph{2.79} \textbf{Schmidt Decomposition} \\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{screen}
+	Procedure of Schmidt decomposition.
+
+	Goal: $\ket{\psi} = \sum_{i} \sqrt{\lambda_i} \ket{i_A} \ket{i_B}$
+
+	\begin{itemize}
+		\item Diagonalize reduced density matrix $\rho_A = \sum_i \lambda_i \ket{i_A} \bra{i_A}$.
+		\item Derive $\ket{i_B}$, $\displaystyle  \ket{i_B} = \frac{(I \otimes \bra{i_A}) \ket{\psi}}{\sqrt{\lambda_i}}$
+		\item Construct $\ket{\psi}$.
+	\end{itemize}
+
+\end{screen}
+
+
+(i)
+\begin{align*}
+	\frac{1}{\sqrt{2}} (\ket{00} + \ket{11}) \text{ This is already decomposed.}
+\end{align*}
+
+
+(ii)
+\begin{align*}
+	\frac{\ket{00}+ \ket{01} + \ket{10} + \ket{11}}{2} = \left( \frac{\ket{0} + \ket{1}}{\sqrt{2}}  \right) \otimes \left( \frac{\ket{0} + \ket{1}}{\sqrt{2}}  \right) = \ket{\psi} \ket{\psi} \text{ where } \ket{\psi} = \frac{\ket{0} + \ket{1}}{\sqrt{2}}
+\end{align*}
+
+
+
+(iii)
+\begin{align*}
+	\ket{\psi}_{AB} &= \frac{1}{\sqrt{3}} (\ket{00} + \ket{01} + \ket{10})\\
+	\rho_{AB} &= \kb{\psi}_{AB}
+\end{align*}
+%
+%
+%
+\begin{align*}
+	\rho_A &= \Tr_B (\rho_{AB}) = \frac{1}{3} \left( 2\kb{0} + \kbt{0}{1} + \kbt{1}{0} + \kb{1} \right)\\
+	\det (\rho_A - \lambda I) &= \left( \frac{2}{3} - \lambda \right) \left( \frac{1}{3} - \lambda \right) - \frac{1}{9} = 0\\
+	\lambda^2 &- \lambda + \frac{1}{9} = 0\\
+	\lambda &= \frac{1 \pm \sqrt{5} / 3}{2} = \frac{3 \pm \sqrt{5}}{6}
+\end{align*}
+
+
+
+Eigenvector with eigenvalue $\displaystyle \lambda_0 \equiv \frac{3 + \sqrt{5}}{6}$ is $\displaystyle \ket{\lambda_0} \equiv \frac{1}{\sqrt{\frac{5 + \sqrt{5}}{2}}} \begin{bmatrix}
+    \frac{1 + \sqrt{5}}{2} \\
+    1
+\end{bmatrix}$ .
+
+Eigenvector with eigenvalue $\displaystyle \lambda_1 \equiv \frac{3 - \sqrt{5}}{6}$ is $\displaystyle \ket{\lambda_1} \equiv \frac{1}{\sqrt{\frac{5 - \sqrt{5}}{2}}} \begin{bmatrix}
+    \frac{1 - \sqrt{5}}{2} \\
+    1
+\end{bmatrix} $.
+
+\begin{align*}
+	\rho_A = \lambda_0 \kb{\lambda_0} + \lambda_1 \kb{\lambda_1}.
+\end{align*}
+
+
+\begin{align*}
+	\ket{a_0} \equiv \frac{(I \otimes \bra{\lambda_0}) \ket{\psi} }{\sqrt{\lambda_0}}\\
+	\ket{a_1} \equiv \frac{(I \otimes \bra{\lambda_1}) \ket{\psi} }{\sqrt{\lambda_1}}
+\end{align*}
+
+Then
+\begin{align*}
+	\ket{\psi} = \sum_{i=0}^1 \sqrt{\lambda_i} \ket{a_i} \ket{\lambda_i}.
+\end{align*}
+
+Calculate $\ket{a_i}$
+
+
+
+\paragraph{2.80} \textbf{Schmidt Coefficient} \\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Let $\ket{\psi} = \sum_i \lambda_i \ket{\psi_i}_A \ket{\psi_i}_B$ and $\ket{\varphi} = \sum_i \lambda_i \ket{\varphi_i}_A \ket{\varphi_i}_B$.
+
+Define $U = \sum_i \ket{\psi_j}\bra{\varphi_j}_A$ and $V = \sum_j \ket{\psi_j} \bra{\varphi_j}_B$.
+
+Then
+\begin{align*}
+	(U \otimes V) \ket{\varphi} &= \sum_i \lambda_i U \ket{\varphi_i}_A  V \ket{\varphi_i}_B\\
+		&= \sum_i \lambda_i \ket{\psi_i}_A \ket{\psi_i}_B\\
+		&= \ket{\psi}.
+\end{align*}
+
+
+\paragraph{2.81} \textbf{Purification} \\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Let the Schmidt decomposition of $\ket{AR_1}$ be $\ket{AR_1} = \sum_i \sqrt{p_i} \ket{\psi_i^A} \ket{\psi_i^R}$ and
+let $\ket{AR_2} = \sum_i \sqrt{q_i} \ket{\phi_i^A} \ket{\phi_i^R}$.
+
+Suppose $\rho^A$ has orthonormal decomposition $\rho^A = \sum_i p_i \ket{i} \bra{i}$.
+
+Since $\ket{AR_1}$ and $\ket{AR_2}$ are purifications of the $\rho^A$, we have
+
+\begin{align*}
+    Tr_R (\ket{AR_1}\bra{AR_1}) = Tr_R (\ket{AR_2}\bra{AR_2}) = \rho^A\\
+    \therefore \sum_i p_i \ket{{\psi_i^A}} \bra{\psi_i^A} = \sum_i q_i \ket{\phi_i^A}\bra{\phi_i^A} = \sum_i \lambda_i \ket{i} \bra{i}.
+\end{align*}
+
+The $\ket{i}$, $\ket{\psi_i^A}$, and $\ket{\psi_i^A}$ are orthonormal bases and they are eigenvectors of $\rho^A$.
+Hence without loss of generality, we can consider
+\begin{align*}
+    \lambda_i = p_i = q_i \text{ and } \ket{i} = \ket{\psi_i^A} = \ket{\phi_i^A}.
+\end{align*}
+%
+Then
+\begin{align*}
+    \ket{AR_1} = \sum_i \lambda_i \ket{i} \ket{\psi_i^R}\\
+    \ket{AR_2} = \sum_i \lambda_i \ket{i} \ket{\phi_i^R}
+\end{align*}
+Since $\ket{AR_1}$ and $\ket{AR_2}$ have same Schmidt numbers, there are two unitary operators $U$ and $V$ such that
+$\ket{AR_1} = (U \otimes V) \ket{AR_2}$ from exercise 2.80.
+
+Suppose $U = I$ and $V = \sum_i \ket{\psi_i^R}\bra{\phi_i^R}$.
+Then
+\begin{align*}
+    \left(I \otimes \sum_j \ket{\psi_j^R} \bra{\phi_j^R} \right) \ket{AR_2} &= \sum_i \lambda_i \ket{i} \left( \sum_j \ket{\psi_j^R} \bra{\phi_j^R} \ket{ \phi_i^R} \right)\\
+                                                           &= \sum_i \lambda_i \ket{i} \ket{\psi_i^R}\\
+                                                           &= \ket{AR_1}.
+\end{align*}
+%
+Therefore there exists a unitary transformation $U_R$ acting on system $R$ such that $\ket{AR_1} = (I \otimes U_R) \ket{AR_2}$.
+
+
+
+\paragraph{2.82} \textbf{} \\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+(1)
+
+Let $\ket{\psi} = \sum_i \sqrt{p_i} \ket{\psi_i} \ket{i}$.
+\begin{align*}
+    Tr_R (\ket{\psi} \bra{\psi})
+        &= \sum_{i,j} \sqrt{p_i} \sqrt{p_j} \ket{\psi_i}\bra{\psi_j} Tr_R (\ket{i}\bra{j})\\
+        &= \sum_{i,j} \sqrt{p_i} \sqrt{p_j} \ket{\psi_i}\bra{\psi_j} \delta_{ij}\\
+        &= \sum_i p_i \ket{\psi_i} \bra{\psi_i} = \rho.
+\end{align*}
+Thus $\ket{\psi}$ is a purification of $\rho$.
+
+\vspace{5mm}
+(2)
+
+Define the projector $P$ by $P = I \otimes \ket{i} \bra{i}$.
+The probability we get the result $i$ is
+\begin{align*}
+    Tr \left[ P \ket{\psi}\bra{\psi}\right] = \braket{\psi | P | \psi} = \braket{\psi | (I \otimes \kb{i}) | \psi} = p_i \braket{\psi_i | \psi_i} = p_i.
+\end{align*}
+
+The post-measurement state is
+\begin{align*}
+    \frac{P \ket{\psi}}{\sqrt{p_i}}
+    = \frac{(I \otimes \ket{i} \bra{i}) \ket{\psi}}{\sqrt{p_i}}
+        = \frac{\sqrt{p_i} \ket{\psi_i}\ket{i}}{\sqrt{p_i}} = \ket{\psi_i}\ket{i}.
+\end{align*}
+
+If we only focus on the state on system $A$,
+\begin{align*}
+    Tr_R (\ket{\psi_i} \ket{i}) = \ket{\psi_i}.
+\end{align*}
+
+\vspace{5mm}
+(3)
+
+($\{ \ket{\psi_i} \}$ is not necessary an orthonormal basis.)
+
+
+Suppose $\ket{AR}$ is a purification of $\rho$ and its Schmidt decomposition is $\ket{AR} = \sum_i \sqrt{\lambda_i} \ket{\phi_i^A} \ket{\phi_i^R}$.
+
+From assumption
+\begin{align*}
+    Tr_R \left( \ket{AR} \bra{AR} \right) = \sum_i \lambda_i \ket{\phi_i^A} \bra{\phi_i^A} = \sum_i p_i \ket{\psi_i} \bra{\psi_i}.
+\end{align*}
+
+By theorem 2.6, there exits an unitary matrix $u_{ij}$ such that $\sqrt{\lambda_i}\ket{\phi_i^A} = \sum_j u_{ij} \sqrt{p_j} \ket{\psi_j}$.
+Then
+\begin{align*}
+    \ket{AR} &= \sum_i \left( \sum_j u_{ij} \sqrt{p_j} \ket{\psi_j} \right) \ket{\phi_i^R}\\
+             &= \sum_j \sqrt{p_j} \ket{\psi_j} \otimes\left( \sum_i u_{ij} \ket{\phi_i^R} \right)\\
+             &= \sum_j \sqrt{p_j} \ket{\psi_j} \ket{j}\\
+             &= \sum_i \sqrt{p_i} \ket{\psi_i} \ket{i}
+\end{align*}
+where $\ket{i} = \sum_k u_{ki} \ket{\phi_k^R}$.
+
+About $\ket{i}$,
+\begin{align*}
+    \braket{k | l} &= \sum_{m,n} u_{mk}^* u_{nl} \braket{\phi_m^R | \phi_n^R }\\
+        &= \sum_{m,n} u_{mk}^* u_{nl} \delta_{mn}\\
+        &= \sum_m u_{mk}^* u_{ml}\\s
+        &= \delta_{kl}, ~~~(\because u_{ij} \text{ is unitary.})
+\end{align*}
+which implies $\ket{j}$ is an orthonormal basis for system $R$.
+
+Therefore if we measure system $R$ w.r.t $\ket{j}$, we obtain $j$ with probability $p_j$ and post-measurement state for $A$ is $\ket{\psi_j}$ from (2).
+Thus for any purification $\ket{AR}$, there exists an orthonormal basis $\ket{i}$ which satisfies the assertion.
