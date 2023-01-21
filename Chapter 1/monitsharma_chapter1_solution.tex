@@ -1,0 +1,75 @@
+\paragraph{1.1} \textbf{Probabilistic classical algorithm}
+
+\\
+It is already shown that a deterministic classical computer would require $2^n/2+1$ queries.
+
+Instead, if we use a probabilistic classical computer i.e, $f(x)$ is evaluated for randomly chosen $x$. With just one execution, we cannot determine whether $f(x)$ is a constant or a balanced function (atleast not with probability of error $\epsilon < 1/2$). If the second evaluation gives a different result than first, we can say with certainity that $f(x)$ is a balanced function. In the other case, the probaility that we get same result twice in a row if the function was balanced would be 1/2 for the first evaluation times $\frac{2^n/2-1}{2^n-1}$ for the second which is less than 1/2 if:
+\begin{equation}
+\begin{split}
+\frac{1}{2} \times \frac{2^n/2-1}{2^n-1} & < \frac{1}{2}\\
+2^n-2 & < 2(2^n-1)\\
+2^n & < 2^{n+1} \\
+n & < n+1
+\end{split}
+\end{equation}
+which is always true for all positive integer $n$ . So if we get same evaluation twice, we can say that $f(x)$ is a constant function with a probability of error $\epsilon < 1/2$. Therefore, the best classical algorithm (probabilistic) will require 2 evaluations, irrespective of size of the input.\\
+
+
+
+\paragraph{1.2} \textbf{Explain how a device.}
+\\
+If a device, upon input of one of two non-orthogonal quantum states correctly identified the state, without collapsing. We can perform certain unitary transformation on an extra quantum state to create either of the quantum states, since we know its coefficients. Thus creating a clone of the input quantum state.
+
+Conversely, if we have a device for cloning, we can in principle, generate multiple copies of the unknown quantum states and perform ensemble measurement to find it's coefficients (hidden information - not accessible in single measurement) with enough precision to identify/distinguish them.\\
+
+\paragraph{P1.1} \textbf{Feynman-Gates Conversation}
+\\
+
+\textbf{Bill Gates}: Hi Richard, it's great to have the opportunity to chat with you about the future of computation\\.
+
+\textbf{Richard Feynman}: Hello Bill, it's an honor to be having this discussion with you. I'm excited to hear your thoughts on where you see technology heading in the near future.\\
+
+\textbf{Bill Gates}: Well, I believe that we're on the cusp of a major breakthrough in artificial intelligence. We've already seen some incredible advancements in machine learning and natural language processing, but I think we're still only scratching the surface of what's possible. I believe that AI will become more and more integrated into our daily lives, and we'll see it being used in a wide variety of industries, from healthcare to transportation.\\
+
+\textbf{Richard Feynman}: That's certainly an interesting perspective. I'm particularly intrigued by the potential of AI to revolutionize the field of medicine. With the ability to process vast amounts of data, AI has the potential to help us better understand and treat diseases, as well as improve patient outcomes.\\
+
+\textbf{Bill Gates}: Absolutely. I think that AI will be particularly useful in the field of personalized medicine. By analyzing a patient's genetic data and medical history, AI will be able to help doctors make more accurate diagnoses and develop more effective treatment plans.\\
+
+\textbf{Richard Feynman}: I also see great potential for AI in the field of quantum computing. As you know, traditional computing is based on binary digits (bits) which can be either 0 or 1. However, quantum computing uses quantum bits, or qubits, which can exist in multiple states simultaneously. This could potentially allow us to solve problems that are currently intractable using traditional computing methods.\\
+
+\textbf{Bill Gates}: Yes, I agree. Quantum computing is still in its infancy, but I believe that we'll see some major breakthroughs in the near future. It has the potential to revolutionize fields like cryptography and drug discovery.\\
+
+\textbf{Richard Feynman}: Another area where I think we'll see major advancements is in the field of robotics. With the development of more advanced sensors and machine learning algorithms, robots will be able to perform tasks that are currently too dangerous or difficult for humans.\\
+
+\textbf{Bill Gates}: I agree. I think that we'll see robots becoming more and more integrated into our daily lives. For example, they could be used in manufacturing, construction, and even in our homes to assist with tasks like cleaning and cooking.\\
+
+\textbf{Richard Feynman}: I also think that we'll see a lot of progress in the field of virtual reality and augmented reality. These technologies have the potential to change the way we interact with the world, and I believe that we'll see them being used in fields like education, entertainment, and even therapy.\\
+
+\textbf{Bill Gates}: Yes, I think that VR and AR will have a huge impact on the way we experience the world. They'll allow us to explore new environments and interact with other people in ways that we never thought possible.\\
+
+\textbf{Richard Feynman}: I think that technology is going to continue to change the world in ways that we can't even imagine. It's exciting to be alive during such a transformative time, and I look forward to seeing all of the advancements that are yet to come.\\
+
+\textbf{Bill Gates}: I couldn't agree more. It's an exciting time to be alive, and I can't wait to see what the future holds for technology. Thank you for the interesting discussion, Richard.\\
+
+\textbf{Richard Feynman}: Thank you, Bill. It was a pleasure to have this conversation with you
+
+
+
+\paragraph{P1.2} \textbf{Essay}
+\\
+
+Quantum computation and quantum information are relatively new fields of study that have the potential to revolutionize the way we think about and use computers. One of the most significant discoveries in these fields is the concept of quantum entanglement.
+
+Quantum entanglement is a phenomenon where two or more quantum particles become linked in such a way that the state of one particle is dependent on the state of the other particle, even when the particles are separated by large distances. This means that if something happens to one particle, it will instantaneously affect the other particle, regardless of how far apart they are.
+
+This strange behavior was first proposed by Albert Einstein, Boris Podolsky, and Nathan Rosen in 1935, but it was not until the 1980s that scientists were able to experimentally demonstrate quantum entanglement. Since then, scientists have been working to understand and harness the power of entanglement for use in quantum computing and quantum communication.
+
+One of the most interesting applications of quantum entanglement is in quantum teleportation. This process, first proposed by physicist Charles Bennett in 1993, allows for the instant transfer of quantum information from one particle to another, without physically moving the particle. This is made possible by the phenomenon of entanglement, as the two particles become linked and can share information instantaneously.
+
+Quantum teleportation has been demonstrated in a number of experiments, and it has the potential to revolutionize the way we think about communication. Instead of physically sending a particle or a piece of information, we could simply transfer the information instantaneously using entanglement. This could have a huge impact on fields like cryptography, as it would make it possible to transmit information securely and instantly, without the need for a physical connection.
+
+Another potential application of entanglement is in quantum computing. In a classical computer, information is stored in bits, which can be either 0 or 1. However, in a quantum computer, information is stored in qubits, which can exist in multiple states simultaneously. This allows for the simultaneous processing of multiple pieces of information, which could greatly speed up the time it takes to solve certain problems.
+
+One of the most promising applications of quantum computing is in the field of cryptography. A quantum computer could be used to break today's encryption codes very fast and efficiently, making it a powerful tool in code breaking.
+
+In conclusion, quantum entanglement is a fascinating phenomenon that has the potential to revolutionize the way we think about and use technology. From instant communication to quantum computing, the possibilities are truly endless. While there is still much research to be done in this field, it's clear that quantum entanglement will be an essential part of the future of technology.
