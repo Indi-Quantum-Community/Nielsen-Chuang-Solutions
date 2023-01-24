@@ -1,6 +1,8 @@
 # Nielsen-Chuang-Solutions
 A repository of hints and solutions for Michael Nielsen and isaac Chuang's Book, Quantum Computation and Quantum Information, 10th Anniversary Edition.  
 
+See the solutions pdf [here](https://github.com/MonitSharma/Nielsen-Chuang-Solutions/blob/master/Nielson_and_Chuang_Solutions%20updated%20%4022012023.pdf)
+
 This is a crowdsourced repository of solutions and hints.  
 Any student of Quantum Computation and information knows that this book has played a significant role in their learning process, and solving the exercises was an integral part of this process. Though many problems were extremely difficult at first sight and needed help or coming back to it at a later point of time. Till date according to our knowledge, there is no complete typed out solutions for the same, with useful hints. So we believe this repository could be quite useful for new learners in their journey.  
 
