@@ -37,7 +37,7 @@ Thank you for using the *"Nielsen and Chuang Solution Manual"* repository, and w
 
 ## Contributing Guidelines:  
 
-(last updated on 23rd July 2020)  
+(last updated on 24th January 2023)  
 1.  Add your names against the Exercise/problem who's hints and solutions you wish to contribute to: [list of contributors](https://docs.google.com/spreadsheets/d/1zf0NDke0a6qjcPdUnzLeqmgeyLlFFOKjl5Vcq9p2Ltw/edit?usp=sharing)  
 2.  Filename of the form: `yourname_insert_random_number.tex` (to avoid clashes of any form).  
 3.  Each time you pick problems or a set of problems, either commit directly to master or make a pull request with the `.tex` files and the corresponding images only, make sure the files are created in the respective folders chapter-wise. Once we have most solutions to the chapter, one of us will review and compile together.  
@@ -60,7 +60,7 @@ Thank you for using the *"Nielsen and Chuang Solution Manual"* repository, and w
 
 The `LaTeX` ecosystem is known for redundant packages. To ensure that we can can compile the contributed `.tex` files, we suggest that you follow the following guidelines.
 
-(last updated on 23rd July 2020)
+(last updated on 24th January 2023)
 1. Use the default `article` class, and the default font.
 2. Feel free to use the AMS-LaTeX collection. For multiline equations, please use the `align` environment.
 3. For the Dirac notation use the `braket` package. (Details are [here](https://ctan.org/tex-archive/macros/latex/contrib/braket?lang=en).)
