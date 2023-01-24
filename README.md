@@ -22,7 +22,7 @@ As a fundamental resource in the field of quantum computation and information, "
 
 Check the complete solutions here :  [Quantum Computing and Quantum Information,10th Anniversary Edition.](https://github.com/MonitSharma/Nielsen-Chuang-Solutions/blob/master/Nielson_and_Chuang_Solutions%20updated%20%4022012023.pdf)
 
-The solutions are organized by chapter and exercise, and are provided in a variety of formats including PDF and LaTeX. Additionally, there are a few different versions of the solutions, which are organized into different branches of the repository.
+The solutions are organized by chapter and exercise, and are provided in a variety of formats including `PDF` and `LaTeX`. Additionally, there are a few different versions of the solutions, which are organized into different branches of the repository.
 
 The master branch of the repository contains the latest and most up-to-date solutions. We welcome contributions from the community, so if you have a solution to an exercise that is not currently in the repository, please feel free to submit a pull request.
 
