@@ -1,0 +1,121 @@
+\paragraph{6.1} \textbf{Phase Shift in Grover}
+\\
+In the Grover iteration, the unitary operator that corresponds to the phase shift is given by:
+$$U_{\omega} = 2|\omega\rangle \langle \omega| - I$$
+where $|\omega\rangle$ is the equal superposition state over all the marked elements in the database.
+
+To see why this is the case, let's first consider a simple case where we have two qubits and one marked element in the database. In this case, the state of the system can be written as:
+
+$$|\psi\rangle = \alpha |00\rangle + \beta|01\rangle + \gamma |10\rangle + \delta |11\rangle$$
+where $\alpha$, $\beta$, $\gamma$, and $\delta$ are complex probability amplitudes.
+
+Now suppose that the first qubit is used to mark the only element in the database. This can be done using a Hadamard gate on the first qubit followed by a phase flip gate on the marked element:
+$$|\psi'\rangle = H \otimes I (\alpha |00\rangle + \beta|01\rangle + \gamma |10\rangle -\delta |11\rangle)$$
+where the minus sign in front of the $\delta$ term indicates that it is the marked element. Applying the Grover iteration step that corresponds to the phase shift then gives:
+
+$$U_{\omega}|\psi'\rangle = 2|\omega\rangle\langle \omega|\psi'\rangle - |\psi'\rangle$$
+
+where $|\omega\rangle = (|00\rangle - |01\rangle - |10\rangle - |11\rangle)/2$ is the equal superposition state over the marked elements. Substituting $|\psi'\rangle$ and $|\omega\rangle$ into this equation and simplifying gives:
+
+
+  $$  = \frac{1}{2}(|00\rangle - |01\rangle - |10\rangle - |11\rangle)(\alpha|00\rangle + \beta|01\rangle + \gamma|10\rangle - \delta|11\rangle) - (\alpha|00\rangle + \beta|01\rangle + \gamma|10\rangle + \delta|11\rangle) $$
+$$= (\alpha|00\rangle + \beta|01\rangle + \gamma|10\rangle - \delta|11\rangle)(-|00\rangle + |01\rangle + |10\rangle + |11\rangle) $$
+$$\qquad\qquad\qquad - (\alpha|00\rangle + \beta|01\rangle + \gamma|10\rangle + \delta|11\rangle) $$
+$$= -\alpha|00\rangle - \beta|01\rangle - \gamma|10\rangle + \delta|11\rangle $$
+$$= -(\alpha|00\rangle + \beta|01\rangle + \gamma|10\rangle - \delta|11\rangle) $$
+$$= -|\psi'\rangle $$
+
+For the choice of $|0\rangle$
+
+Let $|\psi\rangle$ be any state, and define $S=2|\psi\rangle \langle\psi|-I$. Then,
+$$S|\psi\rangle=2|\psi\rangle-|\psi\rangle=|\psi\rangle,$$
+while for any $|\phi\rangle$
+ such that $\langle \phi |\psi\rangle=0$
+,
+$$S|\phi\rangle=-|\phi\rangle.$$
+
+\paragraph{6.2} \textbf{}
+\\
+
+Let's first apply the operator $2|\psi\rangle\langle\psi| - \mathbb{I}$ to the general state $|\psi\rangle = \sum_k \alpha_k |k\rangle$:
+
+$$
+\begin{aligned}
+&= 2\sum_{i,j}\alpha_i\alpha_j^*|i\rangle\langle j|\sum_k \alpha_k |k\rangle - \sum_k \alpha_k |k\rangle \\
+&= 2\sum_{i,j}\alpha_i\alpha_j^*|i\rangle\langle j|\sum_k \alpha_k |k\rangle - \sum_k \alpha_k |k\rangle \\
+&= 2\sum_{i,j}\alpha_i\alpha_j^*\sum_k \alpha_k \delta_{i,k}\delta_{j,k}|k\rangle - \sum_k \alpha_k |k\rangle \\
+&= 2\sum_k\alpha_k\alpha_k^*|k\rangle - \sum_k \alpha_k |k\rangle \\
+&= \sum_k [2|\alpha_k|^2 - 1]\alpha_k |k\rangle.
+\end{aligned}$$
+Next, we can compute the mean value of the $\alpha_k$ coefficients:
+$$\begin{aligned} \langle\alpha\rangle &= \frac{1}{N}\sum_k \alpha_k^* \alpha_k \\
+&= \frac{1}{N}\sum_k |\alpha_k|^2,
+\end{aligned}$$
+where $N$ is the dimension of the vector space.
+Substituting this into the previous equation, we get:
+$$\begin{aligned} (2|\psi\rangle\langle\psi| - \mathbb{I})|\psi\rangle &= \sum_k [2|\alpha_k|^2 - 1]\alpha_k |k\rangle \\
+&= \sum_k [-\alpha_k + 2\alpha_k\langle\alpha\rangle]|k\rangle \\
+&= \sum_k [-\alpha_k + 2\langle\alpha\rangle]|k\rangle.
+\end{aligned}$$
+Therefore, the operation $2|\psi\rangle\langle\psi| - \mathbb{I}$ applied to a general state $|\psi\rangle = \sum_k \alpha_k |k\rangle$ produces the state $\sum_k [-\alpha_k + 2\langle\alpha\rangle]|k\rangle$.
+
+\paragraph{6.3} \textbf{}
+\\
+
+To show that the Grover iteration can be written in the form $G = \begin{pmatrix} \cos\theta & -\sin\theta \ \sin\theta & \cos\theta \end{pmatrix}$, where $|\alpha\rangle$ and $|\beta\rangle$ are the two marked states, we first define the following vectors:
+
+\begin{equation}
+|\psi\rangle = \cos\theta|\alpha\rangle + \sin\theta|\beta\rangle, \quad |\psi^\perp\rangle = -\sin\theta|\alpha\rangle + \cos\theta|\beta\rangle,
+\end{equation}
+
+
+
+where $\theta$ is a real number in the range $0\leq\theta\leq\frac{\pi}{2}$, and $|\psi\rangle$ is the superposition state obtained from the initial state $|s\rangle$ by reflecting it about the marked state $|\omega\rangle$. We can then express $G$ in terms of these vectors as:
+
+\begin{equation}
+G = 2|\psi\rangle\langle\psi| - \mathbb{I}.
+\end{equation}
+
+Substituting the expressions for $|\psi\rangle$ and $|\psi^\perp\rangle$, we obtain:
+
+\begin{equation}
+G = 2\begin{pmatrix}\cos\theta \ \sin\theta\end{pmatrix} \begin{pmatrix}\cos\theta & \sin\theta\end{pmatrix} - \mathbb{I} = \begin{pmatrix} \cos^2\theta - 1 & \sin\theta\cos\theta \ \sin\theta\cos\theta & \sin^2\theta - 1 \end{pmatrix}.
+\end{equation}
+
+Using the trigonometric identity $\cos^2\theta + \sin^2\theta = 1$, we can simplify this expression to:
+
+\begin{equation}
+G = 2\begin{pmatrix}\cos\theta \ \sin\theta\end{pmatrix} \begin{pmatrix}\cos\theta & \sin\theta\end{pmatrix} - \mathbb{I} = \begin{pmatrix} \cos^2\theta - 1 & \sin\theta\cos\theta \ \sin\theta\cos\theta & \sin^2\theta - 1 \end{pmatrix}.
+\end{equation}
+
+
+
+Thus, we have shown that the Grover iteration can be expressed in the form $G = \begin{pmatrix} \cos\theta & -\sin\theta \ \sin\theta & \cos\theta \end{pmatrix}$, where $\theta$ is a real number in the range $0\leq\theta\leq\frac{\pi}{2}$.
+
+\paragraph{6.4} \textbf{}
+\\
+
+
+\begin{itemize}
+    \item Initialize two quantum registers: the search register with $n$ qubits and the output register with $m$ qubits, where $n$ and $m$ are chosen such that $2^n$ is the number of items to be searched and $m$ is chosen such that $2^m$ is greater than the number of solutions. Let $|\psi_0\rangle$ be the initial state of the registers.
+
+    $$ |\psi_0\rangle = |0\rangle^{\otimes n} \otimes |0\rangle^{\otimes n}$$
+
+    \item Apply a Hadamard gate to each qubit in the search register to create a uniform superposition over all $2^n$ possible search states.
+
+    $$\psi_1\rangle = H^{\otimes n} |\psi_0\rangle$$
+
+    \item Apply $k$ iterations of the Grover algorithm to the search register, where $k = \lfloor \frac{\pi}{4} \sqrt{\frac{2^n}{s}} \rfloor$ and $s$ is the number of solutions. Each iteration of the Grover algorithm consists of the following steps:
+
+        \item Apply the oracle $O$ to mark the solutions, where $O$ is a unitary operator that flips the phase of the marked states,where $D$ is the diffusion operator defined by $D=2|s\rangle \langle s| - I$ and $|s\rangle$ is the state that has equal amplitudes over all states.
+
+        $$ |\psi_{i+1} = OD(|\psi_i\rangle)$$
+
+        \item Apply the diffusion operator $D$ to amplify the amplitudes of the marked states, where $D$ is a unitary operator that reflects about the average amplitude of the search register.
+
+    \item Measure the search register to obtain one of the marked states with high probability.
+
+    \item Apply a classical post-processing step to verify the solution and repeat the algorithm as necessary.
+\end{itemize}
+
+Note that in step 3, the number of iterations $k$ required to achieve a high probability of success depends on the number of solutions $s$ and the size of the search space $2^n$. The choice of $k$ is based on the analysis of the Grover algorithm, which shows that $k$ is proportional to $\sqrt{\frac{2^n}{s}}$.
