@@ -1,0 +1,85 @@
+\chapter{Entropy and information}
+\Textbf{11.1}
+Fair coin:
+
+\begin{align}
+    H({1/2, 1/2}) = \left( - \frac{1}{2} \log \frac{1}{2} \right) \times 2 = 1
+\end{align}
+
+
+Fair die:
+\begin{align}
+    H(p) = \left( - \frac{1}{6} \log \frac{1}{6} \right) \times 6 = \log 6.
+\end{align}
+
+
+The entropy decreases if the coin or die is unfair.
+
+
+
+\Textbf{11.2}
+
+From assumption $I(pq) = I(p) + I(q)$.
+
+\begin{align}
+    \frac{\partial I(pq)}{\partial p} &= \frac{\partial I(p)}{\partial p} + 0 = \frac{\partial I(p)}{\partial p}\\
+    \frac{\partial I(pq)}{\partial q} &= 0 + \frac{\partial I(q)}{\partial q} = \frac{\partial I(q)}{\partial q}
+\end{align}
+
+
+\begin{align}
+    \frac{\partial I(pq)}{\partial p}
+        &=  \frac{\partial I(pq)}{\partial (pq)} \frac{\partial (pq)}{\partial p}
+        = q \frac{\partial I(pq)}{\partial(pq)}
+    \Rightarrow \frac{\partial I(pq)}{\partial(pq)} = \frac{1}{q} \frac{\partial I(p)}{\partial p}\\
+%
+    \frac{\partial I(pq)}{\partial q}
+        &=  \frac{\partial I(pq)}{\partial (pq)} \frac{\partial (pq)}{\partial q}
+        = p \frac{\partial I(pq)}{\partial(pq)}
+    \Rightarrow \frac{\partial I(pq)}{\partial(pq)} = \frac{1}{p} \frac{\partial I(q)}{\partial q}
+\end{align}
+
+Thus
+\begin{align}
+    \frac{1}{q} \frac{\partial I(p)}{\partial p} &= \frac{1}{p} \frac{\partial I(q)}{\partial q}\\
+    \therefore~ p \frac{d I(p)}{d p} &= q \frac{d I(q)}{d q} ~~~\text{ for all } p,q \in [0,1].\\
+\end{align}
+
+Then $p (d I(p) / d p)$ is constant.
+
+If $p (d I(p) / d p) = k$, $k \in \mathds{R}$.
+Then $I(p) = k \ln p = k' \log p$ where $k' = k / \log e$.
+
+
+
+\Textbf{11.3}
+$H_{\text{bin}}(p) = - p\log p - (1-p) \log (1-p)$.
+
+\begin{align}
+    \frac{d H_{\text{bin}}(p)}{d p}
+        &= \frac{1}{\ln 2} \left( - \log p - 1 + \log (1-p) + 1 \right)\\
+        &= \frac{1}{\ln 2} \ln \frac{1-p}{p} = 0\\
+    \Rightarrow \frac{1-p}{p} = 1\\
+    \Rightarrow p = 1/2.
+\end{align}
+
+
+\Textbf{11.4}
+\Textbf{11.5}
+
+\begin{align}
+    H\left( p(x,y) || p(x)p(y) \right)
+        &= \sum_{x,y} p(x,y) \log \frac{p(x) p(y)}{p(x,y)}\\
+        &= - H(p(x,y)) - \sum_{x,y} p(x,y) \log \left[ p(x)p(y) \right]\\
+        &= - H(p(x,y)) - \sum_{x,y} p(x,y) \left[ \log p(x) + \log p(y) \right]\\
+        &= - H(p(x,y)) - \sum_{x,y} p(x,y) \log p(x) - \sum_{x,y} p(x,y) \log p(y)\\
+        &= - H(p(x,y)) - \sum_{x} p(x) \log p(x) - \sum_{y} p(y) \log p(y)\\
+        &= - H(p(x,y)) + H(p(x)) + H(p(y))\\
+        &= - H(X,Y) + H(X) + H(Y).
+\end{align}
+
+From the non-negativity of the relative entropy,
+\begin{align}
+    H(X) +  H(Y) - H(X,Y) \geq 0\\
+    \therefore H(X) + H(Y) \geq H(X,Y).
+\end{align}
