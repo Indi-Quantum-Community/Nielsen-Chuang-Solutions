@@ -1,5 +1,6 @@
-\chapter{Distance measures for quantum information}
-\Textbf{9.1}
+
+
+\paragraph{9.1}
 \begin{align*}
 	D((1,0), (1/2,1/2)) &= \frac{1}{2} \left( |1 - 1/2| + |0 - 1/2| \right)\\
 		&= \frac{1}{2} \left(\frac{1}{2} +  \frac{1}{2} \right)\\
@@ -14,7 +15,7 @@
 
 
 
-\Textbf{9.2}
+\paragraph{9.2}
 \begin{align*}
 	D\left((p,1-p), (q, 1-q)\right) &= \frac{1}{2} \left( |p-q| + |(1-p) - (1-q)| \right)\\
 		&= \frac{1}{2} \left( |p-q| + |-p + q| \right)\\
@@ -22,7 +23,7 @@
 \end{align*}
 
 
-\Textbf{9.3}
+\paragraph{9.3}
 \begin{align*}
 	F((1,0), (1/2,1/2)) = \sqrt{1 \cdot 1/2} + \sqrt{0 \cdot 1/2} = \frac{1}{\sqrt{2}}
 \end{align*}
@@ -34,7 +35,7 @@
 
 
 
-\Textbf{9.4}
+\paragraph{9.4}
 
 Define $r_x = p_x - q_x$. Let $U$ be the whole index set.
 \begin{align*}
@@ -76,7 +77,7 @@ On the other hand,
 
 Therefore $D(p_x, q_x) = \max_S \left|\sum_{x \in S} p_x - \sum_{x \in S}q_x \right| = \max_S |p(S) - q(S)|$.
 
-\Textbf{9.5}
+\paragraph{9.5}
 From eqn (\ref{eq:subsettracedist}) and (\ref{eq:probtracedist}), maximizing $\left|\sum_{x \in S} r_x \right|$ is equivalent to
 maximizing $\sum_{x \in S} r_x$.
 
@@ -87,7 +88,7 @@ Hence
 
 
 
-\Textbf{9.6}
+\paragraph{9.6}
 
 Define $\rho = \frac{3}{4}\kb{0} + \frac{1}{4}\kb{1}$, $\sigma = \frac{2}{3} \kb{1} + \frac{1}{3}\kb{1}$.
 \begin{align*}
@@ -123,7 +124,7 @@ Define $\rho = \frac{3}{4}\kb{0} + \frac{1}{4}\kb{1}$, $\sigma = \frac{2}{3} \kb
 
 
 
-\Textbf{9.7}
+\paragraph{9.7}
 
 Since $\rho - \sigma$ is Hermitian, we can apply spectral decomposition.
 Then $\rho - \sigma$ is written as
@@ -149,7 +150,7 @@ Then $P$ and $S$ are positive operator. Therefore $\rho - \sigma = P - S$.
 	\end{align*}
 \end{screen}
 
-\Textbf{9.8}
+\paragraph{9.8}
 
 Suppose $\sigma = \sigma_i$. Then $\sigma = \sum_i p_i \sigma_i$.
 \begin{align}
@@ -158,10 +159,10 @@ Suppose $\sigma = \sigma_i$. Then $\sigma = \sum_i p_i \sigma_i$.
 		&= \sum_i p_i D(\rho_i, \sigma).~~(\because \text{assumption}).
 \end{align}
 
-\Textbf{9.9}
-\Textbf{9.10}
-\Textbf{9.11}
-\Textbf{9.12}
+\paragraph{9.9}
+\paragraph{9.10}
+\paragraph{9.11}
+\paragraph{9.12}
 
 Suppose $\rho = \frac{1}{2} (I + \vec{r}\cdot \vec{\sigma})$ and $\sigma = \frac{1}{2} (I + \vec{s}\cdot \vec{\sigma})$ where $\vec{v}$ and $\vec{s}$ are real vectors s.t. $|\vec{v}|, |\vec{s}| \leq 1$.
 
@@ -180,7 +181,7 @@ Suppose $\rho = \frac{1}{2} (I + \vec{r}\cdot \vec{\sigma})$ and $\sigma = \frac
 
 Is this strictly contractive?
 
-\Textbf{9.13}
+\paragraph{9.13}
 
 Bit flip channel $E_0 = \sqrt{p} I$,  $E_1 = \sqrt{1-p}\sigma_x$.
 \begin{align*}
@@ -214,7 +215,7 @@ Since $\{I, \sigma_x, \sigma_y, \sigma_z \}$ are linearly independent, $r_2 = -r
 Therefore the set of fixed points for the bit flip channel is $\{\rho~ |~ \rho = \frac{1}{2}(I + r \sigma_x), |r| \leq 1, r \in \mathds{R} \}$
 
 
-\Textbf{9.14}
+\paragraph{9.14}
 
 \begin{align*}
 	F(U \rho U^\dagger, U \sigma U^\dagger) &= \Tr \sqrt{(U\rho U^\dagger)^{1/2} \sigma (U \rho U^\dagger)}\\
@@ -243,7 +244,7 @@ Therefore the set of fixed points for the bit flip channel is $\{\rho~ |~ \rho =
 \end{screen}
 
 
-\Textbf{9.15}
+\paragraph{9.15}
 $\ket{\psi} = (U_R \otimes \sqrt{\rho}U_Q) \ket{m}$ is any fixed purification of $\rho$, and $\ket{\phi} = (V_R \otimes \sqrt{\sigma}V_Q) \ket{m}$ is purification of $\sigma$.
 Suppose $\sqrt{\rho} \sqrt{\sigma} = |\sqrt{\rho} \sqrt{\sigma}| V$ is the polar decomposition of $\sqrt{\rho} \sqrt{\sigma}$. Then
 %
@@ -261,7 +262,7 @@ Suppose $\sqrt{\rho} \sqrt{\sigma} = |\sqrt{\rho} \sqrt{\sigma}| V$ is the polar
 Choosing $V_Q = V^\dagger$, $V_R^T = (U_Q^* U_R^\dagger)^\dagger$ we see that equality is attained.
 
 
-\Textbf{9.16}
+\paragraph{9.16}
 I think eq (9.73) has a typo. $\Tr (A^\dagger B) = \braket{m | A \otimes B | m}$ should be $\Tr (A^{\textcolor{red}{T}} B) = \braket{m | A \otimes B | m}$. See errata list.
 
 In order to show that this exercise, I will prove following two properties,
@@ -303,13 +304,13 @@ Thus
     &= \braket{m | A \otimes B | m}.
 \end{align*}
 
-\Textbf{9.17}
+\paragraph{9.17}
 If $\rho = \sigma$, then $F(\rho, \sigma) = 1$. Thus $A(\rho, \sigma) = \arccos F(\rho, \sigma) = \arccos 1 = 0$.
 
 If $A(\rho, \sigma) = 0$, then $\arccos F(\rho, \sigma) = 0 \Rightarrow \cos (\arccos F(\rho, \sigma)) = \cos(0) \Rightarrow F(\rho, \sigma) = 1$ ($\because$ text p.411, the fifth line from bottom).
 
 
-\Textbf{9.18}
+\paragraph{9.18}
 For $0 \leq x \leq y \leq 1$, $\arccos(x) \geq \arccos(y)$. From $F(\mathcal{E}(\rho), \mathcal{E}(\sigma)) \geq F(\rho, \sigma)$ and $0 \leq F(\mathcal{E}(\rho), \mathcal{E}(\sigma)), F(\rho, \sigma) \leq 1$,
 \begin{align*}
     \arccos F(\mathcal{E}(\rho), \mathcal{E}(\sigma)) &\geq \arccos F(\rho, \sigma)\\
@@ -318,7 +319,7 @@ For $0 \leq x \leq y \leq 1$, $\arccos(x) \geq \arccos(y)$. From $F(\mathcal{E}(
 
 
 
-\Textbf{9.19}
+\paragraph{9.19}
 From eq (9.92)
 \begin{align*}
     F \left( \sum_i p_i \rho_i, \sum_i p_i \sigma_i \right) &\geq \sum_i \sqrt{p_i p_i} F(\rho_i, \sigma_i)\\
@@ -326,7 +327,7 @@ From eq (9.92)
 \end{align*}
 
 
-\Textbf{9.20}
+\paragraph{9.20}
 Suppose $\sigma_i = \sigma$. Then
 \begin{align*}
     F \left( \sum_i p_i \rho_i, \sigma \right) &= F \left( \sum_i p_i \rho_i, \sum_i p_i \sigma \right) \\
@@ -336,7 +337,7 @@ Suppose $\sigma_i = \sigma$. Then
 \end{align*}
 
 
-\Textbf{9.21}
+\paragraph{9.21}
 \begin{align*}
     1 - F(\ket{\psi} ,\sigma)^2 &= 1 - \braket{\psi | \sigma | \psi} ~~(\because \text{eq} (9.60))
 \end{align*}
@@ -350,7 +351,7 @@ Suppose $\sigma_i = \sigma$. Then
         &= 1 - F(\ket{\psi}, \sigma)^2.
 \end{align*}
 
-\Textbf{9.22}
+\paragraph{9.22}
 (ref: QCQI Exercise Solutions (Chapter 9) - \begin{CJK}{UTF8}{ipxm}めもめも\end{CJK} \\ \url{http://enakai00.hatenablog.com/entry/2018/04/12/134722})
 
 For all $\rho$, following inequality is satisfied,
@@ -365,7 +366,7 @@ and third is from definition of $E$.
 
 Above inequality is hold for all $\rho$. Thus $E(VU, \mathcal{F} \circ \mathcal{E}) \leq E(V, \mathcal{F})+ E(U, \mathcal{E})$.
 
-\Textbf{9.23}
+\paragraph{9.23}
 ($\Leftarrow$)
 If $\mathcal{E}(\rho_j) = \rho_j$ for all $j$ such that $p_j > 0$, then
 \begin{align*}
@@ -380,10 +381,10 @@ Thus
 Therefore if $\bar{F} = 1$, then $\mathcal{E}(\rho_j) = \rho_j$.
 
 
-\Textbf{Problem 1}
-\Textbf{Problem 2}
+\paragraph{Problem 1}
+\paragraph{Problem 2}
 
-\Textbf{Problem 3}
+\paragraph{Problem 3}
 Theorem 5.3 of
 "Theory of Quantum Error Correction for General Noise",
 Emanuel Knill, Raymond Laflamme, and Lorenza Viola,
