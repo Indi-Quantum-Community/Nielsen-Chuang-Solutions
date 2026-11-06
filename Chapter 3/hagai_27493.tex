@@ -1,0 +1,50 @@
+% Exercise 3.31 (Reversible half-adder) -- contributed by Hagai Drori
+% Packages used: amsmath, braket, tikz + quantikz (\usepackage{tikz}\usetikzlibrary{quantikz})
+
+\paragraph{3.31} \textbf{Reversible half-adder}
+\\
+
+\textit{Construct a reversible circuit which, when two bits $x$ and $y$ are input, outputs $(x, y, c, x \oplus y)$, where $c$ is the carry bit when $x$ and $y$ are added.}
+
+\medskip
+
+Adding two bits gives $x + y = 2c + s$, where the carry bit is $c = x \cdot y$ (the AND of $x$ and $y$) and the sum bit is $s = x \oplus y$. Both outputs can be written onto fresh ancilla bits prepared in the state $0$, using only Toffoli and CNOT gates:
+
+\begin{enumerate}
+    \item \textbf{Carry.} A Toffoli gate with controls $x$, $y$ and target the third bit (initially $0$) maps $0 \to 0 \oplus x y = c$.
+    \item \textbf{Sum.} A CNOT with control $x$ and target the fourth bit (initially $0$) maps $0 \to x$. A second CNOT with control $y$ and the same target maps $x \to x \oplus y = s$.
+\end{enumerate}
+
+\begin{center}
+\begin{quantikz}
+\lstick{$\ket{x}$} & \ctrl{2} & \ctrl{3} & \qw      & \qw \rstick{$\ket{x}$} \\
+\lstick{$\ket{y}$} & \ctrl{1} & \qw      & \ctrl{2} & \qw \rstick{$\ket{y}$} \\
+\lstick{$\ket{0}$} & \targ{}  & \qw      & \qw      & \qw \rstick{$\ket{c} = \ket{x \cdot y}$} \\
+\lstick{$\ket{0}$} & \qw      & \targ{}  & \targ{}  & \qw \rstick{$\ket{x \oplus y}$}
+\end{quantikz}
+\end{center}
+
+The circuit therefore acts as
+\begin{align}
+    \ket{x, y, 0, 0} &\xrightarrow{\text{Toffoli}} \ket{x, y, xy, 0} \nonumber \\
+    &\xrightarrow{\text{CNOT}_{1 \to 4}} \ket{x, y, xy, x} \nonumber \\
+    &\xrightarrow{\text{CNOT}_{2 \to 4}} \ket{x, y, xy, x \oplus y} = \ket{x, y, c, x \oplus y}.
+\end{align}
+
+Checking all four inputs:
+
+\begin{center}
+\begin{tabular}{cc|cccc}
+    \multicolumn{2}{c|}{Input} & \multicolumn{4}{c}{Output} \\
+    $x$ & $y$ & $x$ & $y$ & $c = x \cdot y$ & $x \oplus y$ \\
+    \hline
+    0 & 0 & 0 & 0 & 0 & 0 \\
+    0 & 1 & 0 & 1 & 0 & 1 \\
+    1 & 0 & 1 & 0 & 0 & 1 \\
+    1 & 1 & 1 & 1 & 1 & 0 \\
+\end{tabular}
+\end{center}
+
+\textbf{Why the inputs are kept and two ancillas are needed.} The map $(x, y) \mapsto (c, s)$ is not invertible on its own, because $(0,1)$ and $(1,0)$ both give $(c, s) = (0, 1)$. To keep the computation reversible we must keep $x$ and $y$ alongside the result. A reversible circuit has as many output bits as input bits, so the four outputs $(x, y, c, x \oplus y)$ need four inputs: $x$, $y$ and two ancilla bits set to $0$. Every gate used (Toffoli and CNOT) is its own inverse, so running the three gates in reverse order undoes the circuit.
+
+\textbf{Using Toffoli gates only.} In Section 3.2.5 the Toffoli gate is the universal reversible gate. If only Toffoli gates are allowed, each CNOT is a Toffoli gate with one control fixed to an extra ancilla bit in the state $1$, since $z \oplus (1 \cdot x) = z \oplus x$. The construction above then uses three Toffoli gates and one more ancilla.
